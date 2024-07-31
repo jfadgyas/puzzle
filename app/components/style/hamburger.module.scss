@@ -1,0 +1,20 @@
+@import '/app/common';
+
+.hamburger{
+    position: absolute;
+    right: 1em;
+    background: $bg-color;
+    color: inherit;
+    border: 1px solid $secondary-color;
+    transition: 300ms;
+    &--open{
+        right: 8em;
+        background: hotpink;
+    }
+}
+
+@media screen and (width > 375px) {
+    .hamburger{
+        display: none;
+    }
+}

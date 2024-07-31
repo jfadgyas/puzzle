@@ -1,0 +1,56 @@
+@import '../../common';
+
+.addWrapper{
+   display: inline-flex;
+   margin-block-start: auto;
+   margin-bottom: 2em;
+   & > :last-child{ // the add button
+        margin-left: 1em;
+    }
+}
+
+.qtyWrapper{
+    display: inline-flex;
+}
+
+.button{
+    display: flex;
+    place-items: center;
+    background: none;
+    color: inherit;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 300ms;    
+    &:hover,
+    &:active{
+        background-color: darken($accent-color, 5%);
+    }
+    &--action{
+        min-width: 8em;
+        background: $accent-color;
+    }    
+}
+
+.input{
+    width: 2em;
+    margin: 0;
+    padding: 0.5em;
+    background: #202020;
+    color: $text-color;
+    border: 1px solid transparent;
+    outline: none;
+    text-align: center;
+    transition: 300ms;
+    appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+    }
+    &:focus{
+        border: 1px solid $accent-color;
+    }
+    &:invalid{
+        background: rgba(tomato, 0.5);
+    }
+}

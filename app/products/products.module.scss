@@ -1,0 +1,107 @@
+@import '../common';
+
+.productList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1em;
+}
+
+.productItem{
+    display: flex;
+    flex-direction: column;
+    // place-items: center;
+    box-shadow: 4px 4px 5px rgb(34, 34, 34);
+    &:hover{
+        & .model{
+            color: $link-color;
+        }
+    }
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+    // display: flex;
+    // flex-direction: column;
+    & img{
+        width: 100%;
+    }
+}
+
+.model{
+    @extend %headers;
+    margin-bottom: 0;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    transition: 300ms;
+}
+
+.container{
+    display: flex;
+    gap: 0.5em;
+}
+
+.pieces,
+.minAge,
+.release{
+    @extend %flexItem;
+    gap: 0.25em;
+    & :nth-child(2){
+        font-size: 1.15em;
+    }
+}
+
+.pieces{    
+    gap: 0.25em;
+    margin-block: 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.priceContainer{
+    padding-block: 1em;
+    font-size: 22px;
+    .price:first-child{
+        display: none;
+    }
+    &--sale{
+        .price{
+            &:first-child{
+                display: flex;
+                color: grey;
+                font-size: 20px;
+                text-decoration: line-through;
+            }
+            &:last-child{
+                color: $secondary-color;//mediumspringgreen; // primary, coral?
+                font-size: 32px;
+                font-weight: bold;
+                & .priceIcon{
+                    stroke: $secondary-color;
+                }             
+            }
+        }
+    }
+}
+
+.price{
+    display: flex;
+}
+
+.priceIcon{
+    width: 1.1em;
+}
+
+.extIcon{
+    width: 1.3em;
+}
+
+@media screen and (width <= 375px){
+    .explanation{
+        display: none;
+    }
+}

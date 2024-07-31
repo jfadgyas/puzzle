@@ -1,0 +1,8 @@
+.imgModal{
+    position: relative;
+    display: block;
+    border: none;
+    &::backdrop{
+        backdrop-filter: blur(10px);
+    }
+}

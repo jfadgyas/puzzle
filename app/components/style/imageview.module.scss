@@ -1,0 +1,33 @@
+
+.mainWrapper{
+    display: grid;
+    place-items: center;
+    height: 260px;
+    overflow: hidden;
+}
+.moreWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    place-items: center;
+    padding: 1em;
+}
+.pic{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@media screen and (width >= 1000px){
+    .mainWrapper{
+        width: 550px;
+        height: 380px;
+    }
+    .moreWrapper{
+        width: calc(550px - 2em); // 2x 1em padding
+        height: 100px;
+    }
+}

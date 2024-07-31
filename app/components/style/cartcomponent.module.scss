@@ -1,0 +1,13 @@
+.cart{
+    display: flex;
+}
+
+.counter{
+    display: grid;
+    place-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    background: tomato;
+    border-radius: 50%;
+    font-size: small;
+}

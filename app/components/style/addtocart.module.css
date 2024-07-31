@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Lilita+One&family=Seymour+One&display=swap");
+.addWrapper {
+  display: inline-flex;
+  margin-block-start: auto;
+  margin-bottom: 2em;
+}
+.addWrapper > :last-child {
+  margin-left: 1em;
+}
+
+.qtyWrapper {
+  display: inline-flex;
+}
+
+.button {
+  display: flex;
+  place-items: center;
+  background: none;
+  color: inherit;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 300ms;
+}
+.button:hover, .button:active {
+  background-color: #ff6c37;
+}
+.button--action {
+  min-width: 8em;
+  background: coral;
+}
+
+.input {
+  width: 2em;
+  margin: 0;
+  padding: 0.5em;
+  background: #202020;
+  color: aliceblue;
+  border: 1px solid transparent;
+  outline: none;
+  text-align: center;
+  transition: 300ms;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.input::-webkit-outer-spin-button, .input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.input:focus {
+  border: 1px solid coral;
+}
+.input:invalid {
+  background: rgba(255, 99, 71, 0.5);
+}/*# sourceMappingURL=addtocart.module.css.map */

@@ -1,0 +1,121 @@
+@import '../../common';
+
+$alpha-min: 0.2;
+$alpha-mid: 0.3;
+$alpha-max: 0.5;
+
+.contact{
+    margin: 0 auto;
+}
+
+.title{
+    text-transform: uppercase;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: min-content;
+    gap: 1rem;
+    padding: 1em;
+    border: 1px solid transparent;
+    border-image: linear-gradient(-70deg, $secondary-color, 20%, transparent, transparent, 85%, $secondary-color) 1;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, $alpha-mid);
+}
+
+.label{
+    display: grid;
+    grid-template-columns: 1.5em max-content;
+    align-items: center;
+    gap: 0.5em;
+    transition: 300ms;
+    &:focus-within{
+        color: $link-color;
+        & .input,
+        & .message{
+            color: $link-color;
+            background: rgba(0, 0, 0, $alpha-max);
+        }
+    }
+}
+
+.icon{
+    width: 1.5rem;
+}
+
+.input,
+.message{
+    width: 15rem;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, $alpha-min);
+    color: inherit;
+    border: 1px solid transparent;
+    outline: none;
+    font-family: inherit;
+    &::selection{
+        background: $accent-color;
+        color: $text-color;
+    }
+}
+
+// Hidden submit, to be able to move with enter and not submit
+.hidden{
+    display: none;
+}
+
+.message{
+    min-height: 5em;
+    resize: none;
+    font-size: smaller;
+}
+
+.button{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    place-items: center;
+    margin: 0 auto;
+    width: min-content;
+    background: none;
+    border: none;
+    outline: none;
+    color: $text-color;
+    text-transform: capitalize;
+    &:hover{
+        color: $link-color;
+        cursor: pointer;
+    }
+    &:focus-visible{
+        outline-offset: 0.5em;
+        outline: 1px solid $link-color;
+    }
+}
+
+.result{
+    display: flex;
+    gap: 0.5em;
+    place-items: center;
+    margin: 0;
+    height: 1.25em;
+}
+
+.success{
+    color: $green;
+}
+
+.error{
+    color: $red;
+    &--input{
+        grid-column: 2;
+        height: 0.5em;
+        font-size: 11px;
+    }
+}
+
+@media screen and (width > 400px){
+    .contact{
+        width: 80%;        
+    }
+    .form{
+        place-content: center;
+    }
+}

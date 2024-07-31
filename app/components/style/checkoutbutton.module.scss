@@ -1,0 +1,38 @@
+@import '../../common';
+
+.checkoutBtn{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 1em;
+    width: 100%;
+    padding: 0.5em;
+    background: $secondary-color;
+    color: inherit;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 300ms;
+    &:disabled{
+        // background: none;
+        // color: grey;
+        // border: 1px solid $secondary-color;
+        cursor: not-allowed;
+        // &:hover{
+        //     background: none;
+        // }
+    }
+    &:hover,
+    &:active{
+        background-color: darken($secondary-color, 5%);
+    }
+}
+
+.icon{
+    width: 2.5em;
+}
+
+.text{
+    font-size: large;
+    text-transform: uppercase;
+}

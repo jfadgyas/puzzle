@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+import StoreProvider from "./_context/context";
+
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +18,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // Retrieve cart if abandoned / saved
+  const currentCookies = cookies().getAll()
+  
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=''>
+        <StoreProvider currentCookies={currentCookies}>
+          <NavBar />          
+          {children}
+          <Footer />
+        </StoreProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,105 @@
+@use '../common';
+
+.cartProductList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+.cartProductItem{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 0.5fr;
+    grid-template-areas: 
+        'picture model remove'
+        'picture pieces .'
+        'picture qty subtotal'
+    ;
+    gap: 0.5em;
+    margin-block: 1em;
+    padding-block: 0.5em;
+    box-shadow: 4px 4px 5px rgb(34, 34, 34);
+}
+
+.picture{
+    grid-area: picture;
+    // align-self: flex-start;
+    object-fit: fill;
+}
+
+.model{
+    grid-area: model;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pieces,
+.qty,
+.price,
+.subtotal,
+.totalAmount{
+    @extend %flexItem;
+}
+
+.pieces{
+    grid-area: pieces;
+    place-self: flex-start;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+.qty{
+    grid-area: qty;
+}
+
+.price{
+    grid-area: price;
+}
+
+.subtotal{
+    grid-area: subtotal;
+    width: min-content;
+    padding-right: 0.5em;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.removeBtn{
+    grid-area: remove;
+    // width: min-content;
+    background: none;
+    border: none;
+    outline: none;
+    color: tomato;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.total{
+    border-block: 1px solid hotpink;
+    display: grid;
+    grid-template-columns: 3fr 0.5fr; //1fr 2.2fr;
+    gap: 1em;
+    // width: 53%;
+    margin-left: auto;
+    padding-block: 0.5em;
+    color: grey; //common.$primary-color;
+    font-weight: bold;
+    text-transform: uppercase;
+    // text-align: right;
+}
+
+.icon{
+    width: 1em;
+}
+
+// .subtotal{
+//     border: 1px solid hotpink;
+// }
+
+// .removeBtn{
+//     border: 1px solid lime;
+// }

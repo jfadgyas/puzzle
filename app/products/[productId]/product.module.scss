@@ -1,0 +1,157 @@
+@import '../../common';
+
+.product{
+    display: grid;
+    grid-template-areas:
+        'main'
+        'pictures'
+        'data'
+        'financial';
+    gap: 1em;
+    // row-gap: 2em; //?
+    margin-top: 2em;
+    & > div:first-child{
+        grid-area: pictures; // Pictures, to prevent unnecessary divs
+        border-bottom: 1px solid grey;
+    }
+}
+
+// Main data
+.main{
+    grid-area: main;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.model{
+    margin-bottom: 0;
+    font-size: 1.75em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.make{
+    font-size: 12px;
+    font-style: italic;
+}
+
+// Details about the product
+.data{
+    grid-area: data;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-bottom: 1em;
+}
+
+.pieces{
+    display: flex;
+    gap: 0.5em;
+    margin-top: 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dimensions,
+.width,
+.height,
+.minAge,
+.release,
+.stock{
+    @extend %flexItem;
+    gap: 0.25em;    
+}
+
+// Financial details
+.financial{
+    grid-area: financial;
+}
+
+.priceContainer{
+    padding-block: 1em;
+    font-size: 22px;
+    .price:first-child{
+        display: none;
+    }
+    &--sale{
+        .price{
+            &:first-child{
+                display: flex;
+                color: grey;
+                font-size: 20px;
+                text-decoration: line-through;
+            }
+            &:last-child{
+                color: $secondary-color;//mediumspringgreen; // primary, coral?
+                font-size: 32px;
+                font-weight: bold;
+                & .priceIcon{
+                    stroke: $secondary-color;
+                }             
+            }
+        }
+    }
+}
+
+.price{
+    display: flex;
+}
+
+.priceIcon{
+    width: 1.1em;
+}
+
+.condition{
+    display: flex;
+    // width: min-content;
+    // clip-path: url(#myClip);
+}
+
+.conditionDots{
+    width:120px;
+    height:24px;
+    background: linear-gradient(#25b09b 0 0) 0/0% no-repeat aliceblue;
+    // -webkit-mask: radial-gradient(circle closest-side, #0000 94%,#000, transparent) 0 0/20% 100%;
+    -webkit-mask: radial-gradient(circle closest-side, #000 94%,#0000) 0 0/20% 100%;
+    animation: fill 300ms forwards linear;
+    @keyframes fill {
+        100% {
+            background-size: 100%;
+        }
+    }    
+
+    // width: 1em;
+    // height: 1em;
+    // border: 1px solid;
+    // border-radius: 50%;
+}
+
+.ruler{
+    width: 1.5em;
+    &--width{
+        transform: rotate(90deg);
+    }
+}
+
+@media screen and (width > 375px) {
+    .product{
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        'pictures main'
+        'data financial';
+    }
+}
+
+@media screen and (width > 1000px) {
+    .product{
+        grid-template-columns: 1fr min-content 1fr 0.5fr;
+        grid-template-areas:
+            'pictures main main .'
+            'pictures data financial .';
+            // '. financial';
+            column-gap: 4em;
+        margin-inline: 8em;
+    }
+}

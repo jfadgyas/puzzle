@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Lilita+One&family=Seymour+One&display=swap");
+.dimensions,
+.width,
+.height,
+.minAge,
+.release,
+.stock {
+  display: flex;
+  place-items: center;
+}
+
+.product {
+  display: grid;
+  grid-template-areas: "main" "pictures" "data" "financial";
+  gap: 1em;
+  margin-top: 2em;
+}
+.product > div:first-child {
+  grid-area: pictures;
+  border-bottom: 1px solid grey;
+}
+
+.main {
+  grid-area: main;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.model {
+  margin-bottom: 0;
+  font-size: 1.75em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.make {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.data {
+  grid-area: data;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 1em;
+}
+
+.pieces {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dimensions,
+.width,
+.height,
+.minAge,
+.release,
+.stock {
+  gap: 0.25em;
+}
+
+.financial {
+  grid-area: financial;
+}
+
+.priceContainer {
+  padding-block: 1em;
+  font-size: 22px;
+}
+.priceContainer .price:first-child {
+  display: none;
+}
+.priceContainer--sale .price:first-child {
+  display: flex;
+  color: grey;
+  font-size: 20px;
+  text-decoration: line-through;
+}
+.priceContainer--sale .price:last-child {
+  color: hotpink;
+  font-size: 32px;
+  font-weight: bold;
+}
+.priceContainer--sale .price:last-child .priceIcon {
+  stroke: hotpink;
+}
+
+.price {
+  display: flex;
+}
+
+.priceIcon {
+  width: 1.1em;
+}
+
+.condition {
+  display: flex;
+}
+
+.conditionDots {
+  width: 120px;
+  height: 24px;
+  background: linear-gradient(#25b09b 0 0) 0/0% no-repeat aliceblue;
+  -webkit-mask: radial-gradient(circle closest-side, #000 94%, rgba(0, 0, 0, 0)) 0 0/20% 100%;
+  animation: fill 300ms forwards linear;
+}
+@keyframes fill {
+  100% {
+    background-size: 100%;
+  }
+}
+
+.ruler {
+  width: 1.5em;
+}
+.ruler--width {
+  transform: rotate(90deg);
+}
+
+@media screen and (width > 375px) {
+  .product {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "pictures main" "data financial";
+  }
+}
+@media screen and (width > 1000px) {
+  .product {
+    grid-template-columns: 1fr min-content 1fr 0.5fr;
+    grid-template-areas: "pictures main main ." "pictures data financial .";
+    -moz-column-gap: 4em;
+         column-gap: 4em;
+    margin-inline: 8em;
+  }
+}/*# sourceMappingURL=product.module.css.map */

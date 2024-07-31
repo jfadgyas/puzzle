@@ -1,0 +1,47 @@
+@import '../../common'; 
+
+.success{
+    max-width: 600px;
+    margin: auto;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 10px $borders;
+    text-align: center;
+}
+
+.icon{
+    width: 3em;
+    color: $green;
+}
+
+.result{
+    margin-top: 0;
+    color: $green;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.email{
+    font-weight: bold;
+}
+
+.actions{
+    @extend %flexItem;
+    place-content: center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.link{
+    display: inline-block;
+    padding: 0.625em 1.25em;
+    color: inherit;
+    background-color: $accent-color;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: capitalize;
+    &:hover{
+        background-color: darken($accent-color, 5%);
+    }
+}

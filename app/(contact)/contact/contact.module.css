@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Lilita+One&family=Seymour+One&display=swap");
+.header {
+  font-size: 1.75em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.contact {
+  max-width: 600px;
+  margin: auto;
+  padding-bottom: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgb(34, 34, 34);
+  text-align: center;
+}
+
+.header {
+  margin-top: 0;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.infoSection {
+  display: grid;
+  gap: 1rem;
+  padding: 1em;
+  border: 1px solid transparent;
+  -o-border-image: linear-gradient(-70deg, cornflowerblue, 20%, transparent, transparent, 85%, cornflowerblue) 1;
+     border-image: linear-gradient(-70deg, cornflowerblue, 20%, transparent, transparent, 85%, cornflowerblue) 1;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.infoWrapper {
+  display: grid;
+  grid-template-columns: 1.5rem 16rem;
+  place-items: center;
+  gap: 0.5em;
+}
+
+.icon {
+  width: 1.5rem;
+}
+
+.link {
+  color: cornflowerblue;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 300ms;
+}
+.link:hover {
+  color: #3676e8;
+}
+
+.address {
+  display: block;
+}
+
+@media screen and (width > 400px) {
+  .infoSection {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em 0;
+    place-content: center;
+  }
+}/*# sourceMappingURL=contact.module.css.map */

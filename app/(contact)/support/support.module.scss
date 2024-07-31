@@ -1,0 +1,34 @@
+@import '../../common';
+
+.support{
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 10px $borders;
+    text-align: center;
+}
+
+.header{
+    @extend %headers;
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.link{
+    color: $link-color;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 300ms;
+    &:hover{
+        color: darken($link-color, 10%);
+    }
+}
+
+@media screen and (width > 400px) {
+    .support{
+        padding-inline: 2em;
+    }
+}
