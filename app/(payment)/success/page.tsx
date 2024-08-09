@@ -5,13 +5,7 @@ import { mdilCheck } from '@mdi/light-js'
 
 import style from './success.module.scss'
 
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
-
-const successPage = async ({searchParams}: {searchParams: {session_id: string}}) => {
-    
-    const checkoutSession: Record<string, any> = await stripe.checkout.sessions.retrieve(searchParams.session_id)
+const successPage = ({searchParams}: {searchParams: {session_id: string}}) => {
 
     return (
         <main className={style.success} id='success'>
@@ -20,7 +14,7 @@ const successPage = async ({searchParams}: {searchParams: {session_id: string}})
                 Payment Successful
             </h1>
             <p className={style.mesage}>Thank you for your purchase! Your order will be processed soon.</p>
-            <p className={style.mesage}>An email is sent to <span className={style.email}>{checkoutSession.customer_details.email}</span> with further information.</p>     
+            <p className={style.mesage}>An email is sent to you with further information.</p>     
             <div className={style.actions}>
                 <Link
                     className={style.link}

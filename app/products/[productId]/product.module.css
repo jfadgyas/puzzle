@@ -43,6 +43,12 @@
   font-style: italic;
 }
 
+.link {
+  margin-inline: 0.25em;
+  color: cornflowerblue;
+  text-decoration: none;
+}
+
 .data {
   grid-area: data;
   display: flex;

@@ -1,6 +1,6 @@
 import ProductsPage from "./products/page"
 
-const MainPage = ({searchParams}: {searchParams: Record<string, any>}) => {
+const MainPage = ({searchParams}: {searchParams: { [key: string]: string | string[] | undefined }}) => {
 
     return (
         <main>

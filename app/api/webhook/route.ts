@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import updateOrder from "@/app/_actions/updateOrder";
+import sendEmail from "@/app/_actions/sendEmail";
 
 import Stripe from "stripe";
 
@@ -26,6 +27,7 @@ export async function POST(req: NextRequest){
         if (event.type === 'checkout.session.completed'){
             const session = event.data.object
             const order = await updateOrder(session)
+            const email = await sendEmail('order', session) //, order
         }
 
         if (event.type === 'checkout.session.expired'){

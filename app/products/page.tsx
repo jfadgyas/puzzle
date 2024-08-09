@@ -10,18 +10,23 @@ import {
 } from '@mdi/light-js';
 
 import ExtIcon from '@/app/components/ExtIcon'
-// import Filter from '@/app/components/Filter'
+import FilterComponent from '../components/FilterComponent'
 import AddToCart from '@/app/components/AddToCart'
 
-import {puzzledb} from '../models/puzzle.js'
+import Puzzles from '../models/puzzles'
 
 import style from './products.module.scss'
 
-const ProductsPage = ({searchParams}) => {
+const ProductsPage = async ({searchParams}: {searchParams: { [key: string]: string | string[] | undefined }}) => {
 
-    // console.log(searchParams)
+    const puzzleDb = await Puzzles.find()
 
-    const puzzleList = puzzledb.map(item =>
+    const puzzleList = puzzleDb
+        // .filter(item => 
+        //     item.make.includes(searchParams.make || '') &&
+        //     item.model.includes(searchParams.model || '')
+        // )
+        .map(item =>
         <li 
             key={item._id}
             className={style.productItem}>
@@ -70,17 +75,14 @@ const ProductsPage = ({searchParams}) => {
                     </span>
                 </div>
             </Link>
-            <AddToCart puzzle={item} />
+            <AddToCart puzzle={JSON.parse(JSON.stringify(item))} />
         </li>
     )
 
     return (
-        <section id='products'>
-            {
-                searchParams?.modal && <p>helloo</p>
-            }
+        <section id='products'>            
             <h1 className=''>All products</h1>
-            {/* <Filter /> */}
+            {/* <FilterComponent /> */}
             <ul className={style.productList}>
                 {puzzleList}
             </ul>

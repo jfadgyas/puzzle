@@ -1,16 +1,46 @@
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
-
-// import dbConnect from "../lib/dbConnect";
-import Orders from "../models/orders";
+import Orders from "@/app/models/orders";
 import Puzzles from '@/app/models/puzzles'
 
-const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) => {
-
-    // dbConnect()
-
+const PurchaseSuccess = async (session: Record<string, any>) => {
+    
     const styles = {
+        container: {
+            width: '80%',
+            margin: '0 auto',
+            padding: '20px',
+            background: '#f4f4f4',
+            color: '#333',
+        },
+        header: {
+            textAlign: 'center' as const,
+            margin: '0',
+            padding: '10px 0',
+        },
+        content: {
+            margin: '20px 0',
+        },
+        name: {
+            fontWeight: 'bold' as const,
+            textTransform: 'uppercase' as const
+        },
+        btn: {
+            display: 'inline-block',
+            margin: '10px 0',
+            padding: '10px 20px',
+            background: '#6495ed',
+            color: '#f0f8ff',
+            borderRadius: '5px',
+            textDecoration: 'none',
+            cursor: 'pointer'
+        },
+        link: {
+            color: '#6495ed'
+        },
+        footer: {
+            textAlign: 'center' as const,
+            marginTop: '20px',
+            color: '#777',
+        },
         orderNumber: {
             textAlign: 'center' as const,
             textTransform: 'uppercase' as const
@@ -68,26 +98,10 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
         },
     }
 
-    // const event: Record<string, any> = await stripe.events.retrieve(orders[0].event_id)
-    
-    // console.log(event)
-
-    // const z=await stripe.paymentIntents.retrieve('pi_3Pb6pMLbUtSArnvU1A5zY84w')
-    // const z=await stripe.checkout.sessions.list()
-    // const z=await stripe.checkout.sessions.listLineItems('cs_test_b1sAYacUSKBo9m9OXyzV5GmcbGVsgIYKwW9UiiA72E4c927NgYJu9gPGao')
-    // console.log(JSON.parse(z.metadata.cart))
-    
-    const session = await stripe.checkout.sessions.retrieve(searchParams.session_id)
-    // const session = await stripe.checkout.sessions.retrieve(searchParams.session_id)
-    // console.log(session)
-
-    // Retrieve order from database
-    // searchparams.session
-    // const order = await fetch('http://localhost:3000/api/db/cs_test_a1s04vHOMtxCOoQofDS83u1RNHCNm7dgzzCjkjpDqUfGlXif158RwKW8RV',).then(res => res.json())
     const order = await Orders
-        .findOne({checkout_id: searchParams.session_id})
+        .findOne({checkout_id: session.id})
         .populate('products.product', 'pic model pieces price', Puzzles)
-    
+
     const getItems = () => {
 
         const cart: Record<string, any>[] = order.products
@@ -130,7 +144,7 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
                     </td>
                     <td style={styles.tableCell}>
                         <p style={styles.itemPrice}>
-                            € {order.products.reduce((subTotal: number, item: Record<string, any>) => {subTotal += (item.product.price * item.qty); return subTotal.toFixed(2)}, 0)}
+                            € {order.products.reduce((subTotal: number, item: Record<string, any>) => {subTotal += item.product.price as number * item.qty; return subTotal.toFixed(2)}, 0)}
                         </p>
                     </td>
                 </tr>
@@ -292,29 +306,46 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
     }
 
     return (
-        <section className="order-details">
-            <h2 style={styles.orderNumber}>
-                Order Number: {order._id.toString()}
-            </h2>
-            <table style={styles.table}>
-                <thead>
-                    <tr>
-                        <th style={styles.tableTitle} colSpan={3}>Order summary</th>
-                    </tr>
-                    <tr style={styles.tableProductHeader}>
-                        <th style={styles.tableCellHead}>item</th>
-                        <th style={styles.tableCellHead}>information</th>
-                        <th style={styles.tableCellHead}>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {getItems()}
-                </tbody>
-                {getPayment()}
-                {getShipping()}                
-            </table>
-        </section>
+        <div style={styles.container}>
+            <h1 style={styles.header}>Thank You for Your Purchase!</h1>
+            <div style={styles.content}>
+                <p>Dear <span style={styles.name}>{session.customer_details.name}</span>,</p>
+                <p>Thank you for shopping with Puzzle Plaza! We have received your order and it is now being processed. Your order details are as follows:</p>
+                <section className="order-details">
+                    <h2 style={styles.orderNumber}>
+                        Order Number: {order._id.toString()}
+                    </h2>
+                    <table style={styles.table}>
+                        <thead>
+                            <tr>
+                                <th style={styles.tableTitle} colSpan={3}>Order summary</th>
+                            </tr>
+                            <tr style={styles.tableProductHeader}>
+                                <th style={styles.tableCellHead}>item</th>
+                                <th style={styles.tableCellHead}>information</th>
+                                <th style={styles.tableCellHead}>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {getItems()}
+                        </tbody>
+                        {getPayment()}
+                        {getShipping()}                
+                    </table>
+                </section>
+                <p>Your order will be shipped to the address provided. You can track the shipment using the following link:</p>
+                <p><a href="[Tracking URL]" target='_blank' style={styles.btn}>Track Your Shipment</a></p>
+                <p>If you have any questions or need further assistance, please feel free to contact our support team at <a style={styles.link} href="mailto:support@puzzleplaza.com">support@puzzleplaza.com</a>.</p>
+                <p>Thank you for choosing Puzzle Plaza!</p>
+                <p>Best regards,</p>
+                <p>The Puzzle Plaza Team</p>
+            </div>
+            <div style={styles.footer}>
+                <p>&copy; 2024 Puzzle Plaza. All rights reserved.</p>
+                <p>Puzzle Plaza, 123 Puzzle Street, 1012 AB Amsterdam, Netherlands</p>
+            </div>
+        </div>
     )
 }
 
-export default OrdersPage
+export default PurchaseSuccess

@@ -2,8 +2,8 @@ import mongoose from "mongoose"
 
 const itemsSchema = new mongoose.Schema({
     product: {
-        type: String,//mongoose.Schema.Types.ObjectId,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
     },
     qty: {
         type: Number,

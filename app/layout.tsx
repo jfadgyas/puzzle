@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 import StoreProvider from "./_context/context";
+import dbConnect from "./lib/dbConnect";
+import Toast from "./components/Toast";
 
 import { cookies } from "next/headers";
 
@@ -19,6 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+  dbConnect()
+
   // Retrieve cart if abandoned / saved
   const currentCookies = cookies().getAll()
   
@@ -26,7 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body className=''>
         <StoreProvider currentCookies={currentCookies}>
-          <NavBar />          
+          <NavBar />
+          <Toast />         
           {children}
           <Footer />
         </StoreProvider>

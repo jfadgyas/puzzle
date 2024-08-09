@@ -1,7 +1,10 @@
 'use server'
 
+import dbConnect from "../lib/dbConnect"
+
 const updateOrder = async (session: Record<string, any>) => {
-    // console.log(session)
+    
+    dbConnect()
 
     const newOrder = {
         created: session.created,

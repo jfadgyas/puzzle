@@ -1,0 +1,65 @@
+@import '../../common';
+
+.container{
+    position: fixed;
+    width: 300px;
+    bottom: 1em;
+    right: 1em;
+    z-index: 90;
+}
+.toast{
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    background: rgba($secondary-color, 0.75);
+    border: 1px solid $secondary-color;
+    box-shadow: 4px 4px 5px rgb(34, 34, 34);
+    backdrop-filter: blur(20px);
+    transform: translateX(100%);
+    animation: slideIn 300ms forwards;
+}
+.message{
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    column-gap: 1em;
+    align-items: center;
+}
+.button{
+    display: flex;
+    background: none;
+    border: none;
+    outline: 1px solid $secondary-color;
+    box-shadow: none;
+    cursor: pointer;
+    transition: 300ms;
+    &:hover,
+    &:focus-visible{
+        box-shadow: 4px 4px 5px rgb(34, 34, 34);
+    }
+}
+.title,
+.desc{
+    margin: 0;
+}
+.title{
+    font-weight: bold;
+}
+.desc{
+    grid-column: 2;
+}
+.icon{
+    grid-row: span 2;
+    width: 1.5em;
+    color: $text-color;
+}
+.link{
+    color: inherit;
+    &:hover{
+        color: $link-color;
+    }
+}
+
+@keyframes slideIn {
+    to{
+        transform: translateX(0);
+    }
+}

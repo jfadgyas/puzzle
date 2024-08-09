@@ -1,6 +1,4 @@
 .imgModal {
-  position: relative;
-  display: block;
   border: none;
 }
 .imgModal::backdrop {

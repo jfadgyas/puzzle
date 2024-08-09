@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useContext } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
 
 import {StoreContext} from '@/app/_context/context.js'
 
@@ -12,7 +11,7 @@ import {
 } from '@mdi/light-js';
 
 import Quantity from "./Quantity"
-// import Modal from "./Modal"
+import storeToast from "../_actions/storeToast";
 
 import style from './style/addtocart.module.scss'
 
@@ -20,10 +19,8 @@ const AddToCart = ({puzzle}: {puzzle: Record<string, any>}) => {
 
     const {cart, setCart} = useContext(StoreContext)
     const [currentQty, setCurrentQty] = useState(1)
-    
-    const router = useRouter()
-    // const search = useSearchParams()
 
+    // Get quantity from qty component
     const emitValue = (qty: number) => {
         setCurrentQty(qty)
     }
@@ -31,9 +28,6 @@ const AddToCart = ({puzzle}: {puzzle: Record<string, any>}) => {
     const isOnCart = cart.findIndex((item: Record<string, any>) => item.product._id === puzzle._id)
     
     const handleAdd = () => {
-        
-        // Check if qty is a number > 0
-        // if (isNaN(inputRef.current?.valueAsNumber!) || inputRef.current?.valueAsNumber! <= 0) return console.log('nem lehet<0')
         
         const newCart = [...cart]
 
@@ -45,11 +39,16 @@ const AddToCart = ({puzzle}: {puzzle: Record<string, any>}) => {
             newCart.push({product: puzzle, qty: currentQty})
         }       
         setCart(newCart)
-        router.push('?modal=true')
+
+        // Show toast
+        // Server action cannot handle localStorage
+        const storedToasts = localStorage.getItem('toasts')
+        const list = storedToasts ? JSON.parse(storedToasts) : []
+        localStorage.setItem('toasts', JSON.stringify([...list, puzzle._id.toString()]))
+        storeToast()
     }
 
     return (
-        <>
         <div className={style.addWrapper}>            
             <Quantity stock={puzzle.stock} currentQty={1} index={-1} emitValue={emitValue}/>
             <button
@@ -60,12 +59,6 @@ const AddToCart = ({puzzle}: {puzzle: Record<string, any>}) => {
                 <span>Add {isOnCart === -1 ? ' to cart' : ' more'}</span>
             </button>
         </div>
-        {/* {search.has('modal') && 
-            <Modal>
-                <p>i son cart</p>
-            </Modal>
-        } */}
-        </>
     )
 }
 

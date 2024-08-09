@@ -37,6 +37,13 @@
     font-style: italic;
 }
 
+.link{
+    //extend link?
+    margin-inline: 0.25em;
+    color: $link-color;
+    text-decoration: none;
+}
+
 // Details about the product
 .data{
     grid-area: data;

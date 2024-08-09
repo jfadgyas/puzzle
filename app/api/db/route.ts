@@ -4,7 +4,7 @@ import dbConnect from '@/app/lib/dbConnect'
 
 import Orders from '@/app/models/orders'
 
-export async function GET(req: NextRequest){
+export async function GET(){
     
     dbConnect()
     

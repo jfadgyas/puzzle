@@ -14,15 +14,18 @@ import AddToCart from "@/app/components/AddToCart"
 import ExtIcon from "@/app/components/ExtIcon"
 import ImageView from "@/app/components/ImageView"
 
-import { puzzledb } from "@/app/models/puzzle"
+import Puzzles from '@/app/models/puzzles'
+// import { puzzledb } from "@/app/models/puzzle"
 // use a fetch to fetch all products and filter
 
 import style from './product.module.scss'
 
-const PuzzlePage = ({params}: {params: {productId: string}}) => {
+const PuzzlePage = async ({params}: {params: {productId: string}}) => {
+
+    const puzzleDb = await Puzzles.find()
 
     //add types, will change with db call
-    const puzzle: Record<string, any> | undefined = puzzledb.find(item => item._id === params.productId)
+    const puzzle: Record<string, any> | undefined = puzzleDb.find(item => item._id.toString() === params.productId)
     if(!puzzle) return
     
     return (
@@ -39,7 +42,9 @@ const PuzzlePage = ({params}: {params: {productId: string}}) => {
                 <p>{puzzle.description}</p>
                 <p>
                     <Icon path={mdilTag} size={1} />
-                    {puzzle.theme}
+                    {
+                        puzzle.tags.map((item: string) => <Link className={style.link} key={item} href={item}>{item}</Link>)
+                    }
                 </p>
             </div>
 
@@ -90,7 +95,7 @@ const PuzzlePage = ({params}: {params: {productId: string}}) => {
                     </span>
                 </div>
                 
-                <AddToCart puzzle={puzzle}/>
+                <AddToCart puzzle={JSON.parse(JSON.stringify(puzzle))}/>
 
             </div>
 

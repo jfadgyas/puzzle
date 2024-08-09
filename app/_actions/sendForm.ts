@@ -1,5 +1,7 @@
 'use server'
 
+import sendEmail from "./sendEmail"
+
 const sendForm = async (prevState: any, formData: FormData): Promise<any> => {
 
     // Validate form data
@@ -55,13 +57,14 @@ const sendForm = async (prevState: any, formData: FormData): Promise<any> => {
             if (value) throw new Error('Can not submit a form with errors')
         }
 
-        // Send email with formdata details
+        // Send email to myself with formdata details
+        const emailResult = await sendEmail('contact', data)
+        if (emailResult.type !== 'success') throw new Error(emailResult.message)
         
         return {...newState, type: 'success', message: 'Thank you for your message!', formKey: !prevState.formKey}
         
     }
     catch(err: any){
-        console.error(err.message)
         return {...newState, type: 'error', message: err.message}
     }
 }
