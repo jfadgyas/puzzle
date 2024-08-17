@@ -10,23 +10,13 @@ import {
 } from '@mdi/light-js';
 
 import ExtIcon from '@/app/components/ExtIcon'
-import FilterComponent from '../components/FilterComponent'
 import AddToCart from '@/app/components/AddToCart'
-
-import Puzzles from '../models/puzzles'
 
 import style from './products.module.scss'
 
-const ProductsPage = async ({searchParams}: {searchParams: { [key: string]: string | string[] | undefined }}) => {
-
-    const puzzleDb = await Puzzles.find()
-
-    const puzzleList = puzzleDb
-        // .filter(item => 
-        //     item.make.includes(searchParams.make || '') &&
-        //     item.model.includes(searchParams.model || '')
-        // )
-        .map(item =>
+const ProductsPage = ({puzzles}: {puzzles: Record<string, any>[]}) => {
+    
+    const puzzleList = puzzles.map(item =>
         <li 
             key={item._id}
             className={style.productItem}>
@@ -36,7 +26,7 @@ const ProductsPage = async ({searchParams}: {searchParams: { [key: string]: stri
                 
                 <Image
                     src={item.pic[0]}
-                    width={256}
+                    width={292}
                     height={192}
                     alt='doboz'
                 />
@@ -80,9 +70,7 @@ const ProductsPage = async ({searchParams}: {searchParams: { [key: string]: stri
     )
 
     return (
-        <section id='products'>            
-            <h1 className=''>All products</h1>
-            {/* <FilterComponent /> */}
+        <section id='products'>
             <ul className={style.productList}>
                 {puzzleList}
             </ul>

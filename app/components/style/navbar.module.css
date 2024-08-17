@@ -77,4 +77,7 @@
   .navList--open {
     right: 1em;
   }
+  .navItem {
+    height: 50px;
+  }
 }/*# sourceMappingURL=navbar.module.css.map */

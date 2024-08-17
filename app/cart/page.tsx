@@ -22,6 +22,7 @@ import style from './cart.module.scss'
 const CartPage = () => {
 
     const {cart, setCart, shipping, setShipping} = useContext(StoreContext)
+    let disabledCheckout = false
     let total: number = shipping.cost // To hold card total
     
     // Initial calculation of shipping
@@ -60,6 +61,7 @@ const CartPage = () => {
     // Generate cart items
     const cartItems = cart.map((item: Record<string, any>, index: number) => {
         total += item.qty * item.product.price
+        if (item.qty > item.product.stock) disabledCheckout = true
         return <li
             className={style.cartProductItem}
             key={item.product._id}>
@@ -124,18 +126,8 @@ const CartPage = () => {
                         path={mdilCurrencyEur}
                         size={1}
                     />
-                    {/* {shipping.country} */}
                     {shipping.cost.toFixed(2)}
                 </span>
-                {/* <span>tax:</span>
-                <span className={style.totalAmount}>
-                    <Icon
-                        className={style.icon}
-                        path={mdilCurrencyEur}
-                        size={1}
-                    />
-                    {(total - (total / 1.21)).toFixed(2)}
-                </span> */}
                 <span>Total:</span>
                 <span className={style.totalAmount}>
                     <Icon
@@ -146,7 +138,7 @@ const CartPage = () => {
                     {(total).toFixed(2)}
                 </span>
             </div>
-            <CheckoutButton />
+            <CheckoutButton isDisabled={disabledCheckout}/>
         </section>
     )
 }

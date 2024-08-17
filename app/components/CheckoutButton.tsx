@@ -12,7 +12,7 @@ import payment from "../_actions/payment"
 
 import style from './style/checkoutbutton.module.scss'
 
-const CheckoutButton = () => {
+const CheckoutButton = ({isDisabled}: {isDisabled: boolean}) => {
 
     const router = useRouter()
     const {cart, shipping} = useContext(StoreContext)
@@ -28,11 +28,11 @@ const CheckoutButton = () => {
     return (
         <button
             className={style.checkoutBtn}
-            disabled={cart.length === 0 ? true : false}
+            disabled={isDisabled || cart.length === 0}
             onClick={() => handleClick()}
             >
                 <Icon className={style.icon} path={mdilCreditCard}/>
-                <span className={style.text}>Checkout</span>
+                <span className={style.text}>Checkout{isDisabled && ' not possible'}</span>
         </button>
     )
 }

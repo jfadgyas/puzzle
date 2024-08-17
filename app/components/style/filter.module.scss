@@ -1,0 +1,34 @@
+.fieldset{
+    display: grid;
+    grid-template-rows: 0fr;
+    border: none;
+    border-bottom: 1px solid grey;
+    transition: 300ms;
+    &[aria-hidden=false]{
+        grid-template-rows: 1fr;
+        .title{
+            font-weight: bold;
+        }
+        .icon{
+            rotate: 180deg;
+        }
+    }
+}
+.accordion{
+    overflow: hidden;     
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    width: 50%; // 100
+    padding-top: 1em;
+    cursor: pointer;
+}
+.icon{
+    width: 1.5em;
+    transition: 300ms;
+}
+.values{
+    display: block;
+    text-transform: capitalize;
+}
