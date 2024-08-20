@@ -49,7 +49,7 @@ export const faq = [
             },
             {
                 question: 'How can I track my order?',
-                answer: "Once your order is shipped, you will receive a tracking number via email. You can use this number to track your order on our website or the carrier&apos;s website."
+                answer: "Once your order is shipped, you will receive a tracking number via email. You can use this number to track your order on our website or the carrier's website."
             },
             {
                 question: 'What should I do if my package is delayed or lost?',

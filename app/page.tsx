@@ -1,5 +1,5 @@
 import Filter from "./components/Filter"
-import ProductsPage from "./products/page"
+import Products from '@/app/components/Products'
 
 import filterAction from "./_actions/filterAction"
 
@@ -30,7 +30,7 @@ const MainPage = async ({searchParams}: {searchParams: { [key: string]: string |
             search
             sort
             <Filter brands={brands} tags={tags} />
-            <ProductsPage puzzles={puzzles} />
+            <Products puzzles={puzzles} />
         </main>
     )
 }
