@@ -8,12 +8,10 @@
     box-shadow: 0 0 10px $borders;
     text-align: center;
 }
-
 .icon{
     width: 3em;
     color: $green;
 }
-
 .result{
     margin-top: 0;
     color: $green;
@@ -21,18 +19,15 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-
 .email{
     font-weight: bold;
 }
-
 .actions{
     @extend %flexItem;
     place-content: center;
     gap: 1em;
     margin-top: 2em;
 }
-
 .link{
     display: inline-block;
     padding: 0.625em 1.25em;

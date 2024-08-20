@@ -1,6 +1,7 @@
 // 'use client'
 
 import Link from "next/link"
+
 import Icon from '@mdi/react';
 
 import ExtIcon from "./ExtIcon"
@@ -29,8 +30,7 @@ const Menu = ({menuItem, sub}: {
 
     return (
         <li className={style.navItem}>
-            {/* <ExtIcon className={sub ? `${style['extIcon']} ${style[`extIcon--sub`]}` : style.extIcon} path={sub ? 'submenu' : 'menuitem'} /> */}
-            <ExtIcon className={style.extIcon} path='menuitem' />
+            {/* <ExtIcon className={style.extIcon} path='menuitem' /> */}
             <Link className={style.link} href={menuItem.link}>
                 <ExtIcon className={`${style['extIcon']} ${style['extIcon--menu']}`} path={menuItem.icon} />
                 <Icon className='' path={menuItem.icon} size={1} />

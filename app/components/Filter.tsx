@@ -64,7 +64,7 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
     }
 
     return (
-        <div>
+        <section id='filter'>
             <h1>Filter</h1>
             <form>
                 <fieldset className={style.fieldset} aria-hidden='true'>
@@ -118,7 +118,7 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
                     </div>
                 </fieldset>
             </form>
-        </div>
+        </section>
     )
 }
 

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Metadata } from "next";
 
 // Temporary, need to use the same as contact form
 import Icon from '@mdi/react';
@@ -14,12 +15,17 @@ import ContactForm from "@/app/components/ContactForm"
 
 import style from './contact.module.scss'
 
+export const metadata: Metadata = {
+    title: "Contact Us – Get in Touch with Puzzle Plaza",
+    description: "Created by Jcube 2024",
+  };
+
 const ContactPage = () => {
     return (
         <main className={style.contact}>
             <h1 className={style.header}>Contact Us</h1>
             <p className={style.desc}>If you have any questions or need further assistance, feel free to reach out to us using the information below:</p>
-            <section className={style.infoSection}>
+            <section className={style.infoSection} id='addresses'>
                 <div className={style.infoWrapper}>
                     <Icon className={style.icon} path={mdilAccount} />
                     <span className={style.address}>Puzzle Plaza BV.</span>

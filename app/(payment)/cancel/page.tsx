@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 import Icon from '@mdi/react'
 import { mdilCancel } from '@mdi/light-js'
@@ -8,6 +9,11 @@ import { mdilCancel } from '@mdi/light-js'
 // const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
 import style from './cancel.module.scss'
+
+export const metadata: Metadata = {
+    title: "Payment Unsuccessful – Try Again or Contact Support at Puzzle Plaza",
+    description: "Created by Jcube 2024",
+  };
 
 const CancelPage = () => {
 
@@ -27,7 +33,7 @@ const CancelPage = () => {
                 </Link>
                 <Link
                     className={style.link}
-                    href='/support'>Contact Support
+                    href='/contact'>Contact Support
                 </Link>
                 <Link
                     className={style.link}

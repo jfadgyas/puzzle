@@ -1,9 +1,15 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 import Icon from '@mdi/react'
 import { mdilCheck } from '@mdi/light-js'
 
 import style from './success.module.scss'
+
+export const metadata: Metadata = {
+    title: "Payment Successful – Thank You for Shopping with Puzzle Plaza",
+    description: "Created by Jcube 2024",
+  };
 
 const successPage = ({searchParams}: {searchParams: {session_id: string}}) => {
 

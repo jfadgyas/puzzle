@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect } from 'react'
-
 import Link from 'next/link'
+
+import { useEffect } from 'react'
 
 import Icon from '@mdi/react';
 import {
@@ -41,6 +41,7 @@ const Toast = () => {
     // Delete toast item
     const handleClick = (index: number) => {
         const newList = list.toSpliced(index, 1)
+        // const newList = list.filter((item, idx) => idx!==index) // for IOS safari < 16
         localStorage.setItem('toasts', JSON.stringify(newList))
         storeToast()
     }

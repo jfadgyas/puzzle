@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Metadata } from "next";
 
 import Icon from '@mdi/react';
 import { mdiPuzzle  } from '@mdi/js';
@@ -19,6 +20,11 @@ import Puzzles from '@/app/models/puzzles'
 // use a fetch to fetch all products and filter
 
 import style from './product.module.scss'
+
+export const metadata: Metadata = {
+    title: "Buy Now at Puzzle Plaza",
+    description: "Created by Jcube 2024",
+  };
 
 const PuzzlePage = async ({params}: {params: {productId: string}}) => {
 

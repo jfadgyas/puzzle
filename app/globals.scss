@@ -1,7 +1,3 @@
-// @import "~@flaticon/flaticon-uicons/css/thin/straight";
-// only import that 1 icon from flaticon
-
-
 @import './common';
 
 body{
@@ -16,36 +12,12 @@ body{
 }
 
 .headContainer{
-    // margin-top: 4em;
     padding: 3em 0 3em 0;
     background: url('/small.png');
     background-size: contain;
 }
 
-// .header{
-//     color: $primary-color;
-//     font-family: "Titan One", sans-serif;
-//     font-weight: 400;
-//     font-style: normal;
-//     font-size: 120px;
-//     text-transform: uppercase;
-// }
-// .header1{
-//     color: $primary-color;
-//     font-family: "Bangers", system-ui;
-//     font-weight: 400;
-//     font-style: normal;
-//     font-size: 120px;
-//     text-transform: uppercase;
-// }
-// .header2{
-//     color: $primary-color;
-//     font-family: "Lilita One", sans-serif;
-//     font-weight: 400;
-//     font-style: normal;
-//     font-size: 120px;
-//     text-transform: uppercase;
-// }
+// Puzzle Plaza Head
 .header3{
     margin: 0;
     color: $primary-color;
@@ -55,7 +27,7 @@ body{
     font-size: 29px;
     text-transform: uppercase;
     
-    // decoration
+    // Decoration
     position: relative;
     text-shadow: 
         5px 5px 1px $shadow-light,
@@ -77,34 +49,17 @@ body{
             -2px 2px 1px $edge;
     }
 }
-// .header4{
-//     color: $primary-color;
-//     font-family: "Carter One", system-ui;
-//     font-weight: 400;
-//     font-style: normal;
-//     font-size: 120px;
-//     text-transform: uppercase;
-// }
 
+// kell ez? vagy inkabb egy mixin function, pass color?
 .link{
     color: inherit;
-    // color: coral;
     text-decoration: none;
     &:hover{
         color: cornflowerblue;
     }
 }
 
-// .extIcon{
-//     width: 1.2em;
-//     scale: 1.2;
-//     color: $text-color;
-// }
-
 @media screen and (width > 375px){
-    // .headContainer{
-    //     padding: 3em 0 5em 0;
-    // }
     .header3{
         font-size: 77px;
     }
@@ -112,7 +67,6 @@ body{
 
 @media screen and (width > 1000px){
     .headContainer{
-        // padding: 3em 0 3em 0;
         text-align: center;
     }
     .header3{

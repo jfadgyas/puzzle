@@ -64,7 +64,7 @@ const NavBar = () => {
             link: '/',
         },
         {
-            name: 'New', // 'arrivals',
+            name: 'New',
             icon: mdiNewBox,
             link: '/',
         },
@@ -80,7 +80,7 @@ const NavBar = () => {
         },
         {
             name: 'collections',
-            icon: mdilViewModule, //mdilTag,
+            icon: mdilViewModule,
             link: '/',
         },
         // {
@@ -91,7 +91,7 @@ const NavBar = () => {
         {
             name: 'about',
             icon: mdilInformation,
-            link: '/',
+            link: '/about',
         },
         {
             name: 'contact',
@@ -101,7 +101,7 @@ const NavBar = () => {
         {
             name: 'account',
             icon: mdilAccount,
-            link: '/',
+            link: '/account',
         },
     ]
 

@@ -112,7 +112,7 @@ const CartPage = () => {
     })
 
     return (
-        <section id='CartPage'>
+        <main id='CartPage'>
             <ul className={style.cartProductList}>
                 {cartItems}
             </ul>
@@ -139,7 +139,7 @@ const CartPage = () => {
                 </span>
             </div>
             <CheckoutButton isDisabled={disabledCheckout}/>
-        </section>
+        </main>
     )
 }
 
