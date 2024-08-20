@@ -14,8 +14,10 @@ import AddToCart from '@/app/components/AddToCart'
 
 import style from './products.module.scss'
 
-const ProductsPage = ({puzzles}: {puzzles: any[]}) => {
+const ProductsPage = ({puzzles}: {puzzles: Record<string, any>[]}) => {
     
+    if (!puzzles) return null
+
     const puzzleList = puzzles.map(item =>
         <li 
             key={item._id}
