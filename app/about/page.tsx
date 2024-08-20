@@ -25,15 +25,15 @@ That's why, in **2024**, we founded Puzzle Mania. We wanted to share our passion
 At Puzzle Mania, our mission is simple:  
 To bring the joy of puzzles to everyone, one piece at a time.
 
-We believe that jigsaw puzzles are not just for fun but also a way to unwind, challenge your mind, and even bond with family and friends. That’s why we are committed to offering a wide variety of puzzles, from beautiful landscapes and intricate designs to fun and educational themes for kids.
+We believe that jigsaw puzzles are not just for fun but also a way to unwind, challenge your mind, and even bond with family and friends. That&apos;s why we are committed to offering a wide variety of puzzles, from beautiful landscapes and intricate designs to fun and educational themes for kids.
 
 <h2>Why Puzzle Mania?</h2>
 - **Passion-Driven**: We are puzzle lovers just like you, and we handpick every puzzle in our collection with care.
 - **Quality First**: We prioritize high-quality puzzles that ensure a satisfying and enjoyable experience, with pieces that fit perfectly.
-- **Customer-Centric**: Whether you’re just starting out or are a seasoned puzzler, we’re here to help you find the perfect puzzle.
+- **Customer-Centric**: Whether you&apos;re just starting out or are a seasoned puzzler, we’re here to help you find the perfect puzzle.
 
 <h2>Join the Puzzle Mania Community</h2>
-We're more than just a store – we’re building a community of puzzle lovers who share our excitement and passion. Whether you’re looking for your next challenge or a gift for a fellow puzzle enthusiast, we’re here to inspire and support you on your puzzling journey.
+We're more than just a store – we&apos;re building a community of puzzle lovers who share our excitement and passion. Whether you&apos;re looking for your next challenge or a gift for a fellow puzzle enthusiast, we’re here to inspire and support you on your puzzling journey.
 
 Thank you for visiting **Puzzle Mania**, and happy puzzling!
         </main>

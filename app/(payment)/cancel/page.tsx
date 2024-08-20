@@ -23,7 +23,7 @@ const CancelPage = () => {
             <h1 className={style.result}>
                 Payment Unsuccessful
             </h1>
-            <p className={style.message}>We're sorry, but your payment could not be processed at this time.</p>
+            <p className={style.message}>We&apos;re sorry, but your payment could not be processed at this time.</p>
             <p>Please check your payment information and try again, or use a different payment method.</p>
             <p>If you continue to experience issues, please contact our customer support team.</p>
             <div className={style.actions}>

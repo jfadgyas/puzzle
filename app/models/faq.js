@@ -14,7 +14,6 @@ export const faq = [
         ]
 
     },
-    /*
     {
         category: 'Orders and Payments',
         questions: [
@@ -100,5 +99,5 @@ export const faq = [
             },
 
         ]
-    },*/
+    },
 ]
