@@ -8,6 +8,8 @@ import {
     mdilChevronDown,
 } from '@mdi/light-js';
 
+import AriaButton from "../(contact)/faq/AriaButton";
+
 import style from './style/filter.module.scss'
 
 const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
@@ -68,7 +70,9 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
             <h1>Filter</h1>
             <form>
                 <fieldset className={style.fieldset} aria-hidden='true'>
-                    <legend className={style.title} onClick={handleClick}>Brands<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    <AriaButton>
+                        <legend className={style.title} onClick={handleClick}>Brands<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('make')}
                     </div>

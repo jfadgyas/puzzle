@@ -2,7 +2,7 @@
 
 const filterAction = (item: Record<string, any>, searchParams: { [key: string]: string | string[] | undefined } ) => {
     
-    const newSearch = Array.isArray(searchParams.tags) ? searchParams.tags : [searchParams.tags]
+    if (!searchParams) return item
     
     return Object.keys(item._doc).every(key => {
         const newSearch = Array.isArray(searchParams[key]) ? searchParams[key] : [searchParams[key]]
