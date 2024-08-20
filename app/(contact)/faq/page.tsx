@@ -55,7 +55,7 @@ const FaqPage = () => {
         <main className={style.faq} id='faq'>
             <h1 className={style.header}>frequently asked questions</h1>
             {/* <p>search</p> */}
-            <p>Below you will find answers to the most common questions you may have on our site. If you still can't find the answer you are looking for, just <Link className={style.link} href='/contact'>Contact us!</Link></p>
+            <p>Below you will find answers to the most common questions you may have on our site. If you still can&apos;t find the answer you are looking for, just <Link className={style.link} href='/contact'>Contact us!</Link></p>
             <ul className={style.list}>
                 {showFaq}
             </ul>
