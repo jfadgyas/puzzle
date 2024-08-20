@@ -3,11 +3,11 @@ export const faq = [
         category: 'General',
         questions: [
             {
-                question: 'What is Puzzle Mania?',
-                answer: 'Puzzle Mania is an online store that specializes in buying and selling a wide variety of puzzles and jigsaw puzzles for all ages and skill levels.'
+                question: 'What is Puzzle Plaza?',
+                answer: 'Puzzle Plaza is an online store that specializes in buying and selling a wide variety of puzzles and jigsaw puzzles for all ages and skill levels.'
             },
             {
-                question: 'Where is Puzzle Mania located?',
+                question: 'Where is Puzzle Plaza located?',
                 answer: 'We are located in Amsterdam, the Netherlands.'
             },
 
@@ -31,7 +31,7 @@ export const faq = [
             },
             {
                 question: 'How do I apply a discount code?',
-                answer: 'You can apply a discount code at checkout by entering it in the designated field and clicking "Apply".'
+                answer: 'You can apply a discount code at checkout by entering it in the designated field and clicking <Apply>.'
             },
         ]
 
@@ -49,7 +49,7 @@ export const faq = [
             },
             {
                 question: 'How can I track my order?',
-                answer: "Once your order is shipped, you will receive a tracking number via email. You can use this number to track your order on our website or the carrier's website."
+                answer: "Once your order is shipped, you will receive a tracking number via email. You can use this number to track your order on our website or the carrier&apos;s website."
             },
             {
                 question: 'What should I do if my package is delayed or lost?',
@@ -87,7 +87,7 @@ export const faq = [
         questions: [
             {
                 question: 'How do I create an account?',
-                answer: 'To create an account, click on the "Sign Up" button at the top of the page and follow the instructions to register.'
+                answer: 'To create an account, click on the <Sign Up> button at the top of the page and follow the instructions to register.'
             },
             {
                 question: 'How do I reset my password?',
