@@ -19,7 +19,7 @@ We are passionate puzzle enthusiasts who have spent countless hours solving jigs
 <h2>Our Journey</h2>
 Our love for jigsaw puzzles began as a hobby, but it quickly grew into something much more. Whether it was the joy of finding that perfect piece or the satisfaction of completing a challenging puzzle, we knew that puzzles were more than just a pastime – they were a source of fun, relaxation, and mental stimulation.
 
-That's why, in **2024**, we founded Puzzle Mania. We wanted to share our passion with the world and offer a curated selection of puzzles for all skill levels – from beginners to advanced puzzlers.
+That&apos;s why, in **2024**, we founded Puzzle Mania. We wanted to share our passion with the world and offer a curated selection of puzzles for all skill levels – from beginners to advanced puzzlers.
 
 <h2>Our Mission</h2>
 At Puzzle Mania, our mission is simple:  
@@ -30,10 +30,10 @@ We believe that jigsaw puzzles are not just for fun but also a way to unwind, ch
 <h2>Why Puzzle Mania?</h2>
 - **Passion-Driven**: We are puzzle lovers just like you, and we handpick every puzzle in our collection with care.
 - **Quality First**: We prioritize high-quality puzzles that ensure a satisfying and enjoyable experience, with pieces that fit perfectly.
-- **Customer-Centric**: Whether you&apos;re just starting out or are a seasoned puzzler, we’re here to help you find the perfect puzzle.
+- **Customer-Centric**: Whether you&apos;re just starting out or are a seasoned puzzler, we&apos;re here to help you find the perfect puzzle.
 
 <h2>Join the Puzzle Mania Community</h2>
-We're more than just a store – we&apos;re building a community of puzzle lovers who share our excitement and passion. Whether you&apos;re looking for your next challenge or a gift for a fellow puzzle enthusiast, we’re here to inspire and support you on your puzzling journey.
+We&apos;re more than just a store – we&apos;re building a community of puzzle lovers who share our excitement and passion. Whether you&apos;re looking for your next challenge or a gift for a fellow puzzle enthusiast, we’re here to inspire and support you on your puzzling journey.
 
 Thank you for visiting **Puzzle Mania**, and happy puzzling!
         </main>
