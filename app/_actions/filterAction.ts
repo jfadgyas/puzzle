@@ -1,10 +1,9 @@
 'use server'
 
 const filterAction = (item: Record<string, any>, searchParams: { [key: string]: string | string[] | undefined } ) => {
-    
-    if (!searchParams) return item
-    
+       
     return Object.keys(item._doc).every(key => {
+        if (!searchParams[key]) return item
         const newSearch = Array.isArray(searchParams[key]) ? searchParams[key] : [searchParams[key]]
         if ((key === 'price' || key === 'forAge' || key === 'pieces') && searchParams[key]){
             return newSearch.some(filter => {
