@@ -8,7 +8,7 @@ import {
     mdilChevronDown,
 } from '@mdi/light-js';
 
-import AriaButton from "../(contact)/faq/AriaButton";
+import AriaButton from "@/app/components/AriaButton";
 
 import style from './style/filter.module.scss'
 

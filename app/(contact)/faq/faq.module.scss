@@ -61,12 +61,3 @@
     width: 1.5em;
     transition: 300ms;
 }
-.btn{
-    background: none;
-    color: inherit;
-    border: none;
-    outline: none;
-    &:focus-visible{
-        outline: 1px solid $link-color;
-    }
-}

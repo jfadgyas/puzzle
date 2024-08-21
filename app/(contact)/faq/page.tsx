@@ -6,7 +6,7 @@ import {
     mdilChevronDown,
 } from '@mdi/light-js';
 
-import AriaButton from './AriaButton'
+import AriaButton from '@/app/components/AriaButton'
 import { faq } from "@/app/models/faq"
 
 import style from './faq.module.scss'

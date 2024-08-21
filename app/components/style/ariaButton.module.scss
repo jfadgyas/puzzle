@@ -1,0 +1,11 @@
+@import '../../common';
+
+.btn{
+    background: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    &:focus-visible{
+        outline: 1px solid $link-color;
+    }
+}
