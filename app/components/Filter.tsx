@@ -21,7 +21,7 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
         make: brands, //make
         pieces: ['2-50', '51-100', '101-500', '501-1000', '1001-100000'],
         tags: tags,
-        age: ['0-5', '6-10', '11-18', '19-100'],
+        forAge: ['0-5', '6-10', '11-18', '19-100'],
         price: ['0-10', '11-20', '21-30', '31-40', '41-100'],
 
     }
@@ -71,7 +71,15 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
             <form>
                 <fieldset className={style.fieldset} aria-hidden='true'>
                     <AriaButton>
-                        <legend className={style.title} id='panel1-title'>Brands<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                        <legend
+                            className={style.title}
+                            id='panel1-title'>
+                            Brands
+                            <Icon
+                                className={style.icon}
+                                path={mdilChevronDown}
+                            />
+                        </legend>
                     </AriaButton>
                     <div
                         className={style.accordion}
@@ -83,35 +91,45 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
                     </div>
                 </fieldset>
                 <fieldset className={style.fieldset} aria-hidden='true'>
-                    <legend className={style.title} onClick={handleClick}>Pieces<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    <AriaButton>
+                        <legend className={style.title} onClick={handleClick}>Pieces<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('pieces')}
                     </div>
                 </fieldset>
 
                 <fieldset className={style.fieldset} aria-hidden='true'>
-                    <legend className={style.title} onClick={handleClick}>Categories<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    <AriaButton>
+                        <legend className={style.title} onClick={handleClick}>Categories<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('tags')}
                     </div>
                 </fieldset>
 
                 <fieldset className={style.fieldset} aria-hidden='true'>
-                    <legend className={style.title} onClick={handleClick}>Age<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    <AriaButton>
+                        <legend className={style.title} onClick={handleClick}>Age<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    </AriaButton>
                     <div className={style.accordion}>
-                        {getFilters('age')}
+                        {getFilters('forAge')}
                     </div>                    
                 </fieldset>
 
                 <fieldset className={style.fieldset} aria-hidden='true'>
-                    <legend className={style.title} onClick={handleClick}>Price<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    <AriaButton>
+                        <legend className={style.title} onClick={handleClick}>Price<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('price')}
                     </div>
                 </fieldset>
 
                 <fieldset className={style.fieldset} aria-hidden='true'>
-                    <legend className={style.title} onClick={handleClick}>Sale<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    <AriaButton>
+                        <legend className={style.title} onClick={handleClick}>Sale<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                    </AriaButton>
                     <div className={style.accordion}>
                         <label>
                             <input

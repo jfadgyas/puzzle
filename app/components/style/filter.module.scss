@@ -1,13 +1,15 @@
+@import '../../common';
+
 .fieldset{
     display: grid;
-    grid-template-rows: 0fr;
+    grid-template-rows: auto 0fr;
     border: none;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid $link-color;
     transition: 300ms;
     &[aria-hidden=false]{
-        grid-template-rows: 1fr;
+        grid-template-rows: auto 1fr;
         .title{
-            font-weight: bold;
+            color: $link-color;
         }
         .icon{
             rotate: 180deg;
@@ -20,9 +22,9 @@
 .title{
     display: flex;
     justify-content: space-between;
-    width: 50%; // 100
-    padding-top: 1em;
-    cursor: pointer;
+    width: 50%;
+    padding-top: 0.25em;
+    font-size: 1.25em;
 }
 .icon{
     width: 1.5em;

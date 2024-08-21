@@ -4,7 +4,8 @@ const filterAction = (item: Record<string, any>, searchParams: { [key: string]: 
        
     return Object.keys(item._doc).every(key => {
         if (searchParams[key]){
-            const newSearch: string[] = Array.isArray(searchParams[key]) ? searchParams[key] : Array.of(searchParams[key])
+            const newSearch = Array.isArray(searchParams[key]) ? searchParams[key] : Array.of(searchParams[key])
+            if (newSearch === undefined) return null
             if ((key === 'price' || key === 'forAge' || key === 'pieces')){
                 return newSearch.some(filter => {
                     const minPrice = filter.split('-')[0]
