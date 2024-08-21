@@ -40,8 +40,8 @@ const Toast = () => {
 
     // Delete toast item
     const handleClick = (index: number) => {
-        const newList = list.toSpliced(index, 1)
-        // const newList = list.filter((item, idx) => idx!==index) // for IOS safari < 16
+        // const newList = list.toSpliced(index, 1) // Not supported on IOS safari < 16
+        const newList = list.filter((item: any, idx: number) => idx!==index) // for IOS safari < 16
         localStorage.setItem('toasts', JSON.stringify(newList))
         storeToast()
     }

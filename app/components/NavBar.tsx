@@ -120,8 +120,8 @@ const NavBar = () => {
                     </li>
                 </ul>
             </nav>
-            <div className='headContainer'>
-                <h1 className='header3'>Puzzle Plaza</h1>
+            <div className={style.headContainer}>
+                <h1 className={style.head}>Puzzle Plaza</h1>
             </div>
         </>
     )

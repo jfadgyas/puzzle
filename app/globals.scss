@@ -2,8 +2,8 @@
 
 body{
     margin-inline: 1em;
-    background: $bg-color;//var(--bg-color);
-    color: $text-color;//(--text-color);
+    background: $bg-color;
+    color: $text-color;
 
     font-family: "Merriweather Sans", sans-serif;
     font-optical-sizing: auto;
@@ -11,65 +11,13 @@ body{
     font-style: normal;
 }
 
-.headContainer{
-    padding: 3em 0 3em 0;
-    background: url('/small.png');
-    background-size: contain;
-}
 
-// Puzzle Plaza Head
-.header3{
-    margin: 0;
-    color: $primary-color;
-    font-family: "Seymour One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 29px;
-    text-transform: uppercase;
-    
-    // Decoration
-    position: relative;
-    text-shadow: 
-        5px 5px 1px $shadow-light,
-        -5px 5px 1px $shadow-light,
-        5px -5px 1px $shadow-light,
-        -5px -5px 1px $shadow-light,
-        10px 10px 1px $shadow-dark,
-        -10px 10px 1px $shadow-dark,
-        10px -10px 1px $shadow-dark,
-        -10px -10px 1px $shadow-dark;
-    &::before{
-        content: 'PUZZLE PLAZA';
-        position: absolute;
-        text-shadow: 
-            1px 1px 1px $text-color,
-            2px 2px 1px $edge,
-            2px -2px 1px $edge,
-            -2px -2px 1px $edge,
-            -2px 2px 1px $edge;
-    }
-}
 
-// kell ez? vagy inkabb egy mixin function, pass color?
+// kell ez? vagy inkabb egy mixin function, pass color? a commonba
 .link{
     color: inherit;
     text-decoration: none;
     &:hover{
         color: cornflowerblue;
-    }
-}
-
-@media screen and (width > 375px){
-    .header3{
-        font-size: 77px;
-    }
-}
-
-@media screen and (width > 1000px){
-    .headContainer{
-        text-align: center;
-    }
-    .header3{
-        font-size: 100px;
     }
 }

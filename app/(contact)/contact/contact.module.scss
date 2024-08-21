@@ -8,7 +8,6 @@
     box-shadow: 0 0 10px $borders;
     text-align: center;
 }
-
 .header{
     @extend %headers;
     margin-top: 0;
@@ -16,7 +15,6 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-
 .infoSection{
     display: grid;
     gap: 1rem;
@@ -25,18 +23,15 @@
     border-image: linear-gradient(-70deg, $link-color, 20%, transparent, transparent, 85%, $link-color) 1;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
 }
-
 .infoWrapper{
     display: grid;
     grid-template-columns: 1.5rem 16rem;
     place-items: center;
     gap: 0.5em;
 }
-
 .icon{
     width: 1.5rem;
 }
-
 .link{
     color: $link-color;
     text-decoration: none;
@@ -46,7 +41,6 @@
         color: darken($link-color, 10%);
     }
 }
-
 .address{
     display: block;
 }

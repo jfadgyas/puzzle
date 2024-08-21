@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 import StoreProvider from "./_context/context";
-import dbConnect from "./lib/dbConnect";
 import Toast from "./components/Toast";
 
 import { cookies } from "next/headers";
@@ -20,8 +19,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  dbConnect()
 
   // Retrieve cart if abandoned / saved
   const currentCookies = cookies().getAll()

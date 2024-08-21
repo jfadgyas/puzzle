@@ -101,7 +101,9 @@ const CartPage = () => {
 
             <button
                 className={style.removeBtn}
-                onClick={() => setCart([...cart].toSpliced(index, 1))}>
+                // onClick={() => setCart([...cart].toSpliced(index, 1))} // Not supported on IOS safari < 16
+                onClick={() => setCart([...cart].filter((item: any, idx: number) => idx!==index))} // for IOS safari < 16
+                >
                 <Icon
                     className=''
                     path={mdilDelete}

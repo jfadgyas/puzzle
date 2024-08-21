@@ -1,6 +1,6 @@
+import dbConnect from "./lib/dbConnect";
 import Filter from "./components/Filter"
 import Products from '@/app/components/Products'
-
 import filterAction from "./_actions/filterAction"
 
 import Puzzles from "./models/puzzles"
@@ -8,6 +8,7 @@ import Puzzles from "./models/puzzles"
 const MainPage = async ({searchParams}: {searchParams: { [key: string]: string | string[] | undefined }}) => {
     
     // Get db
+    await dbConnect()
     const puzzleDb = await Puzzles.find()
     
     // Prepare brands for filtering // maybe a for of loop, prepare both in 1 go?
