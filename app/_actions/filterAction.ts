@@ -14,10 +14,10 @@ const filterAction = (item: Record<string, any>, searchParams: { [key: string]: 
                 })
             }
             if (key === 'tags'){
-                return newSearch.some(filter => item[key].includes(filter))
+                return (newSearch as string[]).some(filter => item[key].includes(filter))
             }
             if ((key === 'isOnSale' || key === 'make')){
-                return newSearch.some(filter => item[key].toString() === filter)
+                return (newSearch as string[]).some(filter => item[key].toString() === filter)
             }
         }
         return item
