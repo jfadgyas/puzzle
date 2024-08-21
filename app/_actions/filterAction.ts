@@ -7,7 +7,7 @@ const filterAction = (item: Record<string, any>, searchParams: { [key: string]: 
             const newSearch = Array.isArray(searchParams[key]) ? searchParams[key] : Array.of(searchParams[key])
             if (newSearch === undefined) return null
             if ((key === 'price' || key === 'forAge' || key === 'pieces')){
-                return newSearch.some(filter => {
+                return (newSearch as string[]).some(filter => {
                     const minPrice = filter.split('-')[0]
                     const maxPrice = filter.split('-')[1]
                     return item[key] >= +minPrice && item[key] <= +maxPrice
