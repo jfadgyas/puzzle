@@ -1,7 +1,7 @@
 'use client'
 import { MouseEvent } from 'react'
 
-import style from './faq.module.scss'
+import style from './style/ariaButton.module.scss'
 
 const AriaButton = ({children}: {children: React.ReactNode}) => {
     
@@ -14,6 +14,7 @@ const AriaButton = ({children}: {children: React.ReactNode}) => {
     return (
         <button
             className={style.btn}
+            type='button'
             aria-expanded="true"
             aria-controls="accordion-content"
             onClick={handleClick}

@@ -71,9 +71,14 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
             <form>
                 <fieldset className={style.fieldset} aria-hidden='true'>
                     <AriaButton>
-                        <legend className={style.title} onClick={handleClick}>Brands<Icon className={style.icon} path={mdilChevronDown} /></legend>
+                        <legend className={style.title} id='panel1-title'>Brands<Icon className={style.icon} path={mdilChevronDown} /></legend>
                     </AriaButton>
-                    <div className={style.accordion}>
+                    <div
+                        className={style.accordion}
+                        id='panel1-content'
+                        role="region"
+                        aria-labelledby="panel1-title"
+                        >
                         {getFilters('make')}
                     </div>
                 </fieldset>
