@@ -2,8 +2,6 @@
 
 import { cookies } from "next/headers"
 
-// import createOrder from "./createOrder"
-
 import Stripe from "stripe"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
@@ -72,8 +70,8 @@ const payment = async (cart: Record<string, any>[], shipping: Record<string, any
             phone_number_collection: { // for DPD
                 enabled: true
             },
-            success_url: `${process.env.PROD}/success?session_id={CHECKOUT_SESSION_ID}`, //'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url: `${process.env.PROD}/cancel` //'http://localhost:3000/cancel'
+            success_url: `${process.env.BASEURL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.BASEURL}/cancel`
         })
 
         // Set cart as cookie, to be able to retrive contents
