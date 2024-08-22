@@ -59,7 +59,7 @@
 .head{
     margin: 0;
     color: $primary-color;
-    font-family: "Seymour One", sans-serif;
+    font-family: var(--font-seymour); //"Seymour One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 29px;

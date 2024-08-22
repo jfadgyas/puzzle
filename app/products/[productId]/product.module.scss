@@ -8,7 +8,6 @@
         'data'
         'financial';
     gap: 1em;
-    // row-gap: 2em; //?
     margin-top: 2em;
     & > div:first-child{
         grid-area: pictures; // Pictures, to prevent unnecessary divs
@@ -24,9 +23,10 @@
 }
 
 .model{
+    // extend headers?
     margin-bottom: 0;
     font-size: 1.75em;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-poppins);// "Poppins", sans-serif;
     font-weight: 900;
     font-style: normal;
     text-transform: uppercase;
