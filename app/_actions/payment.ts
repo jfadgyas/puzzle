@@ -72,8 +72,8 @@ const payment = async (cart: Record<string, any>[], shipping: Record<string, any
             phone_number_collection: { // for DPD
                 enabled: true
             },
-            success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url: 'http://localhost:3000/cancel'
+            success_url: `${process.env.PROD}/success?session_id={CHECKOUT_SESSION_ID}`, //'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url: `${process.env.PROD}/cancel` //'http://localhost:3000/cancel'
         })
 
         // Set cart as cookie, to be able to retrive contents
