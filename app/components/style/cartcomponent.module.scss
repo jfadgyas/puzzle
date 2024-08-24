@@ -1,7 +1,8 @@
+@import '../../common';
+
 .cart{
     display: flex;
 }
-
 .counter{
     display: grid;
     place-items: center;
@@ -10,4 +11,7 @@
     background: tomato;
     border-radius: 50%;
     font-size: small;
+}
+.link{
+    @include link;
 }

@@ -10,4 +10,15 @@
   background: tomato;
   border-radius: 50%;
   font-size: small;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+.link:hover {
+  color: cornflowerblue;
+}
+.link:focus-visible {
+  outline: 1px solid cornflowerblue;
 }/*# sourceMappingURL=cartcomponent.module.css.map */

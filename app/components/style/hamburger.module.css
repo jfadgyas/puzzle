@@ -1,6 +1,18 @@
 .hamburger {
   position: absolute;
   right: 1em;
-  background: none;
+  background: rgb(43, 41, 41);
   color: inherit;
+  border: 1px solid hotpink;
+  transition: 300ms;
+}
+.hamburger--open {
+  right: 8em;
+  background: hotpink;
+}
+
+@media screen and (width > 375px) {
+  .hamburger {
+    display: none;
+  }
 }/*# sourceMappingURL=hamburger.module.css.map */

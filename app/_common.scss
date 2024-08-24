@@ -20,7 +20,7 @@ $red: #FF4C4C;
 
 %headers{
     font-size: 1.75em;
-    font-family: var(--font-poppins); //"Poppins", sans-serif;
+    font-family: var(--font-poppins);
     font-weight: 900;
     font-style: normal;
 }
@@ -34,4 +34,15 @@ $red: #FF4C4C;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+@mixin link($color: inherit, $hover: $link-color){
+    color: $color;
+    text-decoration: none;
+    &:hover{
+        color: $hover;
+    }
+    &:focus-visible{
+        outline: 1px solid $hover;
+    }
 }

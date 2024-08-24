@@ -1,0 +1,42 @@
+@import '../../common';
+
+.loading{
+    display: grid;
+    place-items: center;
+    margin-top: 15%;
+}
+
+.list{
+    list-style: none;
+    width: 3em;
+    height: 3em;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    grid-template-rows: repeat(3, min-content);
+}
+
+.item{
+    width: 1em;
+    height: 1em;
+    background: $link-color;
+    scale: 0.5;
+    animation: load 500ms alternate infinite;
+    @for $i from 0 through 8 {
+        &:nth-child(#{$i + 1}){
+            animation-delay: $i * 100ms;
+        }
+    }
+}
+
+.text{
+    color: rgba($link-color, 0.75);
+}
+
+@keyframes load {
+    to {
+        scale: 1;
+    }
+}

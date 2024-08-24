@@ -27,7 +27,7 @@ const MainPage = async ({searchParams}: {searchParams: { [key: string]: string |
     const puzzles = puzzleDb.filter(item => filterAction(item, searchParams))
 
     return (
-        <main>
+        <main id='start'>
             search
             sort
             <Filter brands={brands} tags={tags} />

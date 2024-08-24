@@ -1,4 +1,4 @@
-.navList {
+.link, .navList {
   display: flex;
   place-items: center;
 }
@@ -28,14 +28,18 @@
 }
 
 .link {
+  color: inherit;
   text-decoration: none;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 100%;
-  color: inherit;
   transition: 300ms;
+}
+.link:hover {
+  color: cornflowerblue;
+}
+.link:focus-visible {
+  outline: 1px solid cornflowerblue;
 }
 
 .text {

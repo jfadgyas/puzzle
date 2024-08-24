@@ -6,12 +6,4 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-}
-
-.link {
-  color: inherit;
-  text-decoration: none;
-}
-.link:hover {
-  color: cornflowerblue;
 }/*# sourceMappingURL=globals.css.map */

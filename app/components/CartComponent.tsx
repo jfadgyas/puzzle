@@ -22,7 +22,7 @@ const CartComponent = () => {
 
     return (
         <Link
-            className={`link ${style.cart}`}
+            className={`${style.link} ${style.cart}`}
             href='/cart'>
             <Icon path={mdilCart} size={1} />
             <span className={style.counter}>

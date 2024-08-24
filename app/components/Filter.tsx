@@ -9,6 +9,7 @@ import {
 } from '@mdi/light-js';
 
 import AriaButton from "@/app/components/AriaButton";
+import ExtIcon from "./ExtIcon";
 
 import style from './style/filter.module.scss'
 
@@ -66,8 +67,11 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
     }
 
     return (
-        <section id='filter'>
-            <h1>Filter</h1>
+        <section className={style.filter} id='filter' aria-hidden='true'>
+            <AriaButton className={style.filterBtn}>
+                <ExtIcon className={style.filterIcon} path='filter'></ExtIcon>
+            </AriaButton>
+            <h3 className={style.heading}>Filter</h3>
             <form>
                 <fieldset className={style.fieldset} aria-hidden='true'>
                     <AriaButton>

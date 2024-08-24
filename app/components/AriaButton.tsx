@@ -3,7 +3,7 @@ import { MouseEvent } from 'react'
 
 import style from './style/ariaButton.module.scss'
 
-const AriaButton = ({children}: {children: React.ReactNode}) => {
+const AriaButton = ({className, children}: {className?: string, children: React.ReactNode}) => {
     
     const handleClick = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
         const currentAccordion = e.currentTarget.parentElement
@@ -13,7 +13,7 @@ const AriaButton = ({children}: {children: React.ReactNode}) => {
     
     return (
         <button
-            className={style.btn}
+            className={`${style.btn} ${className}`}
             type='button'
             aria-expanded="true"
             aria-controls="accordion-content"

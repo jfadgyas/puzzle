@@ -1,5 +1,22 @@
 @import '../../common';
 
+.filter{
+    position: absolute;
+    width: 300px;
+    transform: translateX(-350px);
+    background: $bg-color;
+    z-index: 100;
+    transition: 300ms;
+    &[aria-hidden=false]{
+        transform: translateX(0);
+        .filterBtn{
+            left: calc(-300px - 1em);
+        }
+    }
+}
+.heading{
+    padding-left: 1em;
+}
 .fieldset{
     display: grid;
     grid-template-rows: auto 0fr;
@@ -22,15 +39,33 @@
 .title{
     display: flex;
     justify-content: space-between;
-    width: 50%;
     padding-top: 0.25em;
     font-size: 1.25em;
 }
-.icon{
+.icon,
+.filterIcon{
     width: 1.5em;
     transition: 300ms;
+}
+.filterBtn{
+    position: absolute;
+    top: -1.5em;
+    right: -5.5em;
+    background: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    &:focus-visible{
+        outline: 1px solid $link-color;
+    }
 }
 .values{
     display: block;
     text-transform: capitalize;
+}
+
+@media screen and (width > 1200px) {
+    .filterBtn{
+        display: none;
+    }
 }

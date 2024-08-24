@@ -5,19 +5,8 @@ body{
     background: $bg-color;
     color: $text-color;
 
-    font-family: var(--font-merri); //"Merriweather Sans", sans-serif;
+    font-family: var(--font-merri);
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-}
-
-
-
-// kell ez? vagy inkabb egy mixin function, pass color? a commonba
-.link{
-    color: inherit;
-    text-decoration: none;
-    &:hover{
-        color: cornflowerblue;
-    }
 }

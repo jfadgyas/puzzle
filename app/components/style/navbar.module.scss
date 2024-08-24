@@ -19,14 +19,12 @@
     }
 }
 .link{
-    text-decoration: none;
-    display: flex;
+    @include link;
+    @extend %flexItem;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 100%;
-    color: inherit; 
-    transition: 300ms;
+    transition: 300ms; 
 }
 .text{
     font-size: 12px;

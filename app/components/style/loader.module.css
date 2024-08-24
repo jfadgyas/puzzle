@@ -1,0 +1,61 @@
+.loading {
+  display: grid;
+  place-items: center;
+  margin-top: 15%;
+}
+
+.list {
+  list-style: none;
+  width: 3em;
+  height: 3em;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-template-rows: repeat(3, min-content);
+}
+
+.item {
+  width: 1em;
+  height: 1em;
+  background: cornflowerblue;
+  scale: 0.5;
+  animation: load 500ms alternate infinite;
+}
+.item:nth-child(1) {
+  animation-delay: 0ms;
+}
+.item:nth-child(2) {
+  animation-delay: 100ms;
+}
+.item:nth-child(3) {
+  animation-delay: 200ms;
+}
+.item:nth-child(4) {
+  animation-delay: 300ms;
+}
+.item:nth-child(5) {
+  animation-delay: 400ms;
+}
+.item:nth-child(6) {
+  animation-delay: 500ms;
+}
+.item:nth-child(7) {
+  animation-delay: 600ms;
+}
+.item:nth-child(8) {
+  animation-delay: 700ms;
+}
+.item:nth-child(9) {
+  animation-delay: 800ms;
+}
+
+.text {
+  color: rgba(100, 149, 237, 0.75);
+}
+
+@keyframes load {
+  to {
+    scale: 1;
+  }
+}/*# sourceMappingURL=loader.module.css.map */

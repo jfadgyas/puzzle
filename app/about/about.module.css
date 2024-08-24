@@ -1,0 +1,63 @@
+.title,
+.heading {
+  font-size: 1.75em;
+  font-family: var(--font-poppins);
+  font-weight: 900;
+  font-style: normal;
+}
+
+.about {
+  margin: auto;
+  padding: 2em;
+  line-height: 1.6;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title,
+.heading {
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.5em;
+}
+
+.subtitle {
+  font-size: 1.25em;
+}
+
+.why:first-child {
+  color: cornflowerblue;
+}
+.why:nth-child(2) {
+  color: coral;
+}
+.why:last-child {
+  color: hotpink;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.textSection {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.imageSection {
+  flex: 1;
+  text-align: center;
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 10px;
+}/*# sourceMappingURL=about.module.css.map */

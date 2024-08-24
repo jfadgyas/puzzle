@@ -72,6 +72,16 @@ const icons: Record<string, ReactNode> = {
         </g>
         </svg>
     ,
+    filter:
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <title>37-Option</title>
+        <g id="_37-Option" data-name="37-Option">
+            <path fill="currentColor" d="M17,4.1V0H15V4.1a5,5,0,0,0,0,9.8V32h2V13.9a5,5,0,0,0,0-9.8ZM16,12a3,3,0,1,1,3-3A3,3,0,0,1,16,12Z"/>
+            <path fill="currentColor" d="M6,15.1V0H4V15.1a5,5,0,0,0,0,9.8V32H6V24.9a5,5,0,0,0,0-9.8ZM5,23a3,3,0,1,1,3-3A3,3,0,0,1,5,23Z"/>
+            <path fill="currentColor" d="M28,18.1V0H26V18.1a5,5,0,0,0,0,9.8V32h2V27.9a5,5,0,0,0,0-9.8ZM27,26a3,3,0,1,1,3-3A3,3,0,0,1,27,26Z"/>
+        </g>
+    </svg>
+    ,
 }
   
     return icons[path]

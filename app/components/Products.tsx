@@ -70,7 +70,7 @@ const Products = ({puzzles}: {puzzles: Record<string, any>[]}) => {
     )
 
     return (
-        <section id='products'>
+        <section className={style.products} id='products'>
             <ul className={style.productList}>
                 {puzzleList}
             </ul>

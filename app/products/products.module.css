@@ -12,7 +12,14 @@
   place-items: center;
 }
 
+.products {
+  display: grid;
+  grid-template-areas: ". products";
+  grid-template-columns: 0 1fr;
+}
+
 .productList {
+  grid-area: products;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -106,5 +113,10 @@
 @media screen and (width <= 375px) {
   .explanation {
     display: none;
+  }
+}
+@media screen and (width > 1200px) {
+  .products {
+    grid-template-columns: calc(300px + 1em) 1fr;
   }
 }/*# sourceMappingURL=products.module.css.map */
