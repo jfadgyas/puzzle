@@ -1,0 +1,22 @@
+.heading {
+  font-size: 1.75em;
+  font-family: var(--font-poppins);
+  font-weight: 900;
+  font-style: normal;
+}
+
+.notfound {
+  display: flex;
+  place-items: center;
+}
+
+.notfound {
+  flex-direction: column;
+  gap: 1em;
+  color: #FF4C4C;
+  text-align: center;
+}
+
+.heading {
+  text-transform: uppercase;
+}/*# sourceMappingURL=notfound.module.css.map */

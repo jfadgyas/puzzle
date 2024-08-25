@@ -1,0 +1,15 @@
+.error {
+  display: flex;
+  place-items: center;
+}
+
+.error {
+  flex-direction: column;
+  gap: 1em;
+  color: #FF4C4C;
+  text-align: center;
+}
+
+.message {
+  width: 60%;
+}/*# sourceMappingURL=error.module.css.map */

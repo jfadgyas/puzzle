@@ -1,0 +1,12 @@
+@import './common';
+
+.error{
+    @extend %flexItem;
+    flex-direction: column;
+    gap: 1em;
+    color: $red;
+    text-align: center;
+}
+.message{
+    width: 60%;
+}

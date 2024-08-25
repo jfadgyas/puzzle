@@ -39,6 +39,7 @@ $red: #FF4C4C;
 @mixin link($color: inherit, $hover: $link-color){
     color: $color;
     text-decoration: none;
+    transition: 300ms;
     &:hover{
         color: $hover;
     }

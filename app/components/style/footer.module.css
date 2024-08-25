@@ -22,9 +22,13 @@
 .link {
   color: cornflowerblue;
   text-decoration: none;
+  transition: 300ms;
 }
-.link:visited {
-  color: cornflowerblue;
+.link:hover {
+  color: coral;
+}
+.link:focus-visible {
+  outline: 1px solid coral;
 }
 
 .socialIcons {

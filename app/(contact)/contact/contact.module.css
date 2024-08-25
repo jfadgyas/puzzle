@@ -45,11 +45,14 @@
 .link {
   color: cornflowerblue;
   text-decoration: none;
-  font-weight: bold;
   transition: 300ms;
+  font-weight: bold;
 }
 .link:hover {
-  color: #3676e8;
+  color: coral;
+}
+.link:focus-visible {
+  outline: 1px solid coral;
 }
 
 .address {

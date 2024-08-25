@@ -24,7 +24,6 @@ const CheckoutButton = ({isDisabled}: {isDisabled: boolean}) => {
         // if no url throw error?   
     }
 
-    //disbale button if more than keszlet
     return (
         <button
             className={style.checkoutBtn}

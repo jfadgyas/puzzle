@@ -1,0 +1,13 @@
+@import './common';
+
+.notfound{
+    @extend %flexItem;
+    flex-direction: column;
+    gap: 1em;
+    color: $red;
+    text-align: center;
+}
+.heading{
+    @extend %headers;
+    text-transform: uppercase;
+}

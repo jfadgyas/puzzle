@@ -1,38 +1,41 @@
 @import '../../common';
 
 .checkoutBtn{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: 1em;
+    @extend %flexItem;
+    justify-content: center;
+    gap: 0.5em;
     width: 100%;
     padding: 0.5em;
     background: $secondary-color;
     color: inherit;
+    outline: none;
     border: none;
     text-transform: uppercase;
     cursor: pointer;
     transition: 300ms;
     &:disabled{
-        // background: none;
-        // color: grey;
-        // border: 1px solid $secondary-color;
+        background: grey;
         cursor: not-allowed;
-        // &:hover{
-        //     background: none;
-        // }
     }
-    &:hover,
+    &:hover:not(:disabled),
     &:active{
         background-color: darken($secondary-color, 5%);
     }
+    &:focus-visible{
+        outline: 1px solid $link-color;
+    }
 }
-
 .icon{
     width: 2.5em;
 }
-
 .text{
     font-size: large;
     text-transform: uppercase;
+}
+
+@media screen and (width > 1000px) {
+    .checkoutBtn{
+        width: 600px;
+        margin: auto;
+    }
 }

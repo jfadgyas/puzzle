@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 
 import { useRef, useEffect } from "react"
 
-import style from './style/imageModal.module.scss'
+import style from './style/modal.module.scss'
 
 const Modal = ({ children }: { children: React.ReactNode }) => {
   

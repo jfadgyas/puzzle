@@ -8,10 +8,9 @@ import Puzzles from '@/app/models/puzzles'
 
 const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) => {
 
-    // dbConnect()
-
     const styles = {
         orderNumber: {
+            fontSize: '1.4em',
             textAlign: 'center' as const,
             textTransform: 'uppercase' as const
         },
@@ -26,7 +25,7 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
             textTransform: 'uppercase' as const
         },
         tableProductHeader: {            
-            background: '#6494ed7e',
+            background: 'cornflowerblue',
             fontSize: '13px',
             textTransform: 'capitalize' as const
         },
@@ -67,27 +66,16 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
             textTransform: 'uppercase' as const,
         },
     }
-
-    // const event: Record<string, any> = await stripe.events.retrieve(orders[0].event_id)
     
-    // console.log(event)
-
-    // const z=await stripe.paymentIntents.retrieve('pi_3Pb6pMLbUtSArnvU1A5zY84w')
-    // const z=await stripe.checkout.sessions.list()
-    // const z=await stripe.checkout.sessions.listLineItems('cs_test_b1sAYacUSKBo9m9OXyzV5GmcbGVsgIYKwW9UiiA72E4c927NgYJu9gPGao')
-    // console.log(JSON.parse(z.metadata.cart))
-    
+    // Get stripe session
     const session = await stripe.checkout.sessions.retrieve(searchParams.session_id)
-    // const session = await stripe.checkout.sessions.retrieve(searchParams.session_id)
-    // console.log(session)
-
-    // Retrieve order from database
-    // searchparams.session
-    // const order = await fetch('http://localhost:3000/api/db/cs_test_a1s04vHOMtxCOoQofDS83u1RNHCNm7dgzzCjkjpDqUfGlXif158RwKW8RV',).then(res => res.json())
+    
+    // Get order from db
     const order = await Orders
         .findOne({checkout_id: searchParams.session_id})
         .populate('products.product', 'pic model pieces price', Puzzles)
     
+    // Prepare sold items
     const getItems = () => {
 
         const cart: Record<string, any>[] = order.products
@@ -114,6 +102,7 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
         return showCart
     }
 
+    // Payment info
     const getPayment = () => {
         return (
             <tbody>
@@ -130,7 +119,7 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
                     </td>
                     <td style={styles.tableCell}>
                         <p style={styles.itemPrice}>
-                            € {order.products.reduce((subTotal: number, item: Record<string, any>) => {subTotal += (item.product.price * item.qty); return subTotal.toFixed(2)}, 0)}
+                            € {(order.products.reduce((subTotal: number, item: Record<string, any>) => {subTotal += item.qty * item.product.price; return subTotal}, 0)).toFixed(2)}
                         </p>
                     </td>
                 </tr>
@@ -185,6 +174,7 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
         )
     }
 
+    // Shipping info // billing address?
     const getShipping = () => {
 
         const customer = session.customer_details!

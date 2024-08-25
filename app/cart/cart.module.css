@@ -64,17 +64,21 @@
 
 .removeBtn {
   grid-area: remove;
+  margin-block-start: auto;
   background: none;
   border: none;
   outline: none;
-  color: tomato;
+  color: #FF4C4C;
 }
 .removeBtn:hover {
   cursor: pointer;
 }
+.removeBtn:focus-visible {
+  outline: 1px solid #FF4C4C;
+}
 
 .total {
-  border-block: 1px solid hotpink;
+  border-top: 1px solid hotpink;
   display: grid;
   grid-template-columns: 3fr 0.5fr;
   gap: 1em;

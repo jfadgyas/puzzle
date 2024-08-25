@@ -1,22 +1,30 @@
 .checkoutBtn {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   place-items: center;
-  gap: 1em;
+}
+
+.checkoutBtn {
+  justify-content: center;
+  gap: 0.5em;
   width: 100%;
   padding: 0.5em;
   background: hotpink;
   color: inherit;
+  outline: none;
   border: none;
   text-transform: uppercase;
   cursor: pointer;
   transition: 300ms;
 }
 .checkoutBtn:disabled {
+  background: grey;
   cursor: not-allowed;
 }
-.checkoutBtn:hover, .checkoutBtn:active {
+.checkoutBtn:hover:not(:disabled), .checkoutBtn:active {
   background-color: #ff50a7;
+}
+.checkoutBtn:focus-visible {
+  outline: 1px solid cornflowerblue;
 }
 
 .icon {
@@ -26,4 +34,11 @@
 .text {
   font-size: large;
   text-transform: uppercase;
+}
+
+@media screen and (width > 1000px) {
+  .checkoutBtn {
+    width: 600px;
+    margin: auto;
+  }
 }/*# sourceMappingURL=checkoutbutton.module.css.map */
