@@ -1,0 +1,18 @@
+.auxrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterBtn {
+  background: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+.filterBtn:focus-visible {
+  outline: 1px solid cornflowerblue;
+}
+
+.filterIcon {
+  width: 1.5em;
+}/*# sourceMappingURL=page.module.css.map */

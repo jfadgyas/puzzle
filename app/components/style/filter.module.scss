@@ -3,15 +3,14 @@
 .filter{
     position: absolute;
     width: 300px;
+    min-height: 100dvh;
     transform: translateX(-350px);
-    background: $bg-color;
+    background: rgba($bg-color, 0.7);
+    backdrop-filter: blur(5px);
     z-index: 100;
     transition: 300ms;
     &[aria-hidden=false]{
         transform: translateX(0);
-        .filterBtn{
-            left: calc(-300px - 1em);
-        }
     }
 }
 .heading{
@@ -42,22 +41,9 @@
     padding-top: 0.25em;
     font-size: 1.25em;
 }
-.icon,
-.filterIcon{
+.icon{
     width: 1.5em;
     transition: 300ms;
-}
-.filterBtn{
-    position: absolute;
-    top: -1.5em;
-    right: -5.5em;
-    background: none;
-    color: inherit;
-    border: none;
-    outline: none;
-    &:focus-visible{
-        outline: 1px solid $link-color;
-    }
 }
 .values{
     display: block;
@@ -65,7 +51,7 @@
 }
 
 @media screen and (width > 1200px) {
-    .filterBtn{
-        display: none;
+    .filter{
+        transform: translateX(0);
     }
 }

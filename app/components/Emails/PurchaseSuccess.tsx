@@ -144,7 +144,7 @@ const PurchaseSuccess = async (session: Record<string, any>) => {
                     </td>
                     <td style={styles.tableCell}>
                         <p style={styles.itemPrice}>
-                            € {order.products.reduce((subTotal: number, item: Record<string, any>) => {subTotal += item.product.price as number * item.qty; return subTotal.toFixed(2)}, 0)}
+                            € {(order.products.reduce((subTotal: number, item: Record<string, any>) => {subTotal += item.product.price * item.qty; return +subTotal}, 0)).toFixed(2)}
                         </p>
                     </td>
                 </tr>

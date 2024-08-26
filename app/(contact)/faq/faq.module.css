@@ -71,6 +71,13 @@
 .link {
   color: cornflowerblue;
   text-decoration: none;
+  transition: 300ms;
+}
+.link:hover {
+  color: cornflowerblue;
+}
+.link:focus-visible {
+  outline: 1px solid cornflowerblue;
 }
 
 .icon {

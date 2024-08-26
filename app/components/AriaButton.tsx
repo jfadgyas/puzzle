@@ -1,12 +1,16 @@
 'use client'
+
 import { MouseEvent } from 'react'
 
 import style from './style/ariaButton.module.scss'
 
-const AriaButton = ({className, children}: {className?: string, children: React.ReactNode}) => {
+const AriaButton = ({ariaId, className, children}: {ariaId: string, className?: string, children: React.ReactNode}) => {
     
     const handleClick = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-        const currentAccordion = e.currentTarget.parentElement
+        // const currentAccordion = e.currentTarget.parentElement
+        // const isHidden = currentAccordion?.getAttribute('aria-hidden')
+        // currentAccordion?.setAttribute('aria-hidden', isHidden === 'true' ? 'false' : 'true')
+        const currentAccordion = document.querySelector(ariaId)
         const isHidden = currentAccordion?.getAttribute('aria-hidden')
         currentAccordion?.setAttribute('aria-hidden', isHidden === 'true' ? 'false' : 'true')
     }
@@ -15,8 +19,8 @@ const AriaButton = ({className, children}: {className?: string, children: React.
         <button
             className={`${style.btn} ${className}`}
             type='button'
-            aria-expanded="true"
-            aria-controls="accordion-content"
+            aria-expanded='true'
+            aria-controls={ariaId}
             onClick={handleClick}
             >
             {children}

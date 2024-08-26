@@ -4,6 +4,10 @@ import Products from '@/app/components/Products'
 import filterAction from "./_actions/filterAction"
 
 import Puzzles from "./models/puzzles"
+import AriaButton from "./components/AriaButton";
+import ExtIcon from './components/ExtIcon'
+
+import style from './page.module.scss'
 
 const MainPage = async ({searchParams}: {searchParams: { [key: string]: string | string[] | undefined }}) => {
     
@@ -28,8 +32,13 @@ const MainPage = async ({searchParams}: {searchParams: { [key: string]: string |
 
     return (
         <main id='start'>
-            search
-            sort
+            <div className={style.auxrow} id='auxrow'>
+                <AriaButton ariaId={'#filter'} className={style.filterBtn}>
+                    <ExtIcon className={style.filterIcon} path='filter'></ExtIcon>
+                </AriaButton>
+            <span>search</span>
+            <span>sort</span>
+            </div>
             <Filter brands={brands} tags={tags} />
             <Products puzzles={puzzles} />
         </main>

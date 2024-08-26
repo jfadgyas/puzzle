@@ -1,0 +1,18 @@
+@import './common';
+
+.auxrow{
+    display: flex;
+    justify-content: space-between;
+}
+.filterBtn{
+    background: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    &:focus-visible{
+        outline: 1px solid $link-color;
+    }
+}
+.filterIcon{
+    width: 1.5em;
+}

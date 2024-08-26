@@ -9,7 +9,6 @@ import {
 } from '@mdi/light-js';
 
 import AriaButton from "@/app/components/AriaButton";
-import ExtIcon from "./ExtIcon";
 
 import style from './style/filter.module.scss'
 
@@ -67,14 +66,17 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
     }
 
     return (
-        <section className={style.filter} id='filter' aria-hidden='true'>
-            <AriaButton className={style.filterBtn}>
-                <ExtIcon className={style.filterIcon} path='filter'></ExtIcon>
-            </AriaButton>
+        <section
+            className={style.filter}
+            id='filter'
+            aria-hidden='true'>
             <h3 className={style.heading}>Filter</h3>
             <form>
-                <fieldset className={style.fieldset} aria-hidden='true'>
-                    <AriaButton>
+                <fieldset
+                    className={style.fieldset}
+                    id='filterBrand'
+                    aria-hidden='true'>
+                    <AriaButton ariaId='#filterBrand'>
                         <legend
                             className={style.title}
                             id='panel1-title'>
@@ -94,44 +96,55 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
                         {getFilters('make')}
                     </div>
                 </fieldset>
-                <fieldset className={style.fieldset} aria-hidden='true'>
-                    <AriaButton>
+                <fieldset
+                    className={style.fieldset}
+                    id='filterPieces'
+                    aria-hidden='true'>
+                    <AriaButton ariaId='#filterPieces'>
                         <legend className={style.title} onClick={handleClick}>Pieces<Icon className={style.icon} path={mdilChevronDown} /></legend>
                     </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('pieces')}
                     </div>
                 </fieldset>
-
-                <fieldset className={style.fieldset} aria-hidden='true'>
-                    <AriaButton>
+                <fieldset
+                    className={style.fieldset}
+                    id='filterCat'
+                    aria-hidden='true'>
+                    <AriaButton ariaId='#filterCat'>
                         <legend className={style.title} onClick={handleClick}>Categories<Icon className={style.icon} path={mdilChevronDown} /></legend>
                     </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('tags')}
                     </div>
                 </fieldset>
-
-                <fieldset className={style.fieldset} aria-hidden='true'>
-                    <AriaButton>
+                <fieldset
+                    className={style.fieldset}
+                    id='filterAge'
+                    aria-hidden='true'>
+                    <AriaButton ariaId='#filterAge'>
                         <legend className={style.title} onClick={handleClick}>Age<Icon className={style.icon} path={mdilChevronDown} /></legend>
                     </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('forAge')}
                     </div>                    
                 </fieldset>
-
-                <fieldset className={style.fieldset} aria-hidden='true'>
-                    <AriaButton>
+                <fieldset
+                    className={style.fieldset}
+                    id='filterPrice'
+                    aria-hidden='true'>
+                    <AriaButton ariaId='#filterPrice'>
                         <legend className={style.title} onClick={handleClick}>Price<Icon className={style.icon} path={mdilChevronDown} /></legend>
                     </AriaButton>
                     <div className={style.accordion}>
                         {getFilters('price')}
                     </div>
                 </fieldset>
-
-                <fieldset className={style.fieldset} aria-hidden='true'>
-                    <AriaButton>
+                <fieldset
+                    className={style.fieldset}
+                    id='filterSale'
+                    aria-hidden='true'>
+                    <AriaButton ariaId='#filterSale'>
                         <legend className={style.title} onClick={handleClick}>Sale<Icon className={style.icon} path={mdilChevronDown} /></legend>
                     </AriaButton>
                     <div className={style.accordion}>

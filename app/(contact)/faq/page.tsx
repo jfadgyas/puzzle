@@ -27,13 +27,14 @@ const FaqPage = () => {
         )
     }
 
-    const showFaq = faq.map(category =>
+    const showFaq = faq.map((category, index) =>
         <li
             className={style.catItem}
             key={category.category}
+            id={`cat${index}`}
             aria-hidden='true'
             >
-            <AriaButton>
+            <AriaButton ariaId={`#cat${index}`}>
                 <h2 className={style.title} id='panel1-title'>
                     <span>{category.category}</span>
                     <Icon className={style.icon} path={mdilChevronDown} />
