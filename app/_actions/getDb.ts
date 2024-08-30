@@ -9,9 +9,11 @@ const getDb = async (searchParams: { [key: string]: string | string[] | undefine
         if (key === 'sort') return 
         if (key === 'price' || key === 'forAge' || key === 'pieces'){
             const newSearch = Array.isArray(searchParams[key]) ? searchParams[key] : Array.of(searchParams[key])
+            if (newSearch === undefined) return null
+
             let newFilter: Record<string, any>[] = []
 
-            newSearch.map(item => {
+            newSearch!.map(item => {
                 const minValue = item!.split('-')[0]
                 const maxValue = item!.split('-')[1]
                 newFilter.push({[key]: {$gte: +minValue, $lte: +maxValue}})
