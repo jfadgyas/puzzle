@@ -2,7 +2,6 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
-// import dbConnect from "../lib/dbConnect";
 import Orders from "../models/orders";
 import Puzzles from '@/app/models/puzzles'
 

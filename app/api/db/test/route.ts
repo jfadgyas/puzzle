@@ -3,9 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from '@/app/lib/dbConnect'
 
 import Puzzles from "@/app/models/puzzles";
+import Helpers from '@/app/models/helpers'
 
 dbConnect()
 
+// Get orders
 export async function GET(){
     
     try{
@@ -20,4 +22,17 @@ export async function GET(){
             message: err.message,
         })
     }
+}
+
+
+// Create brands and tags for filters
+export async function POST(req: NextRequest){
+    const data = await req.json()
+    console.log(data)
+
+    const newHelpers = new Helpers(data)
+    await newHelpers.save()
+
+    return NextResponse.json(newHelpers)
+
 }

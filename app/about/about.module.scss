@@ -2,53 +2,110 @@
 
 .about{
     margin: auto;
-    padding: 2em;
-    line-height: 1.6;
-}
-.hero{
-    text-align: center;
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 .title,
 .heading{
     @extend %headers;
+    margin: 0;
     text-transform: uppercase;
 }
+.title,
+.subtitle,
+.heading{
+    text-align: center;
+}
 .title{
-    font-size: 2.5em; //?
+    font-size: 2.7em;
+    line-height: 1;
 }
 .subtitle{
-    font-size: 1.25em;
+    margin: 0;
+    color: $accent-color;
+    font-style: italic;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-block: 1em;
+}
+.textSection{
+    padding: 1em;
+    border: 1px solid transparent;
+    border-image: linear-gradient(-70deg, $link-color, 20%, transparent, transparent, 85%, $link-color) 1;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+    text-align: justify;
+}
+.imageSection{
+    position: relative;
+    height: 12em;    
+    margin-block-start: auto;
+}
+.image{
+    border-radius: 10px;
+}
+.company{
+    color: $primary-color;
+    font-weight: bold;
+}
+.whyUs{
+    padding-inline: 1em;
 }
 .why{
-    &:first-child{
+    margin: 1em;
+    &:first-child :first-child{
         color: $link-color;
     }
-    &:nth-child(2){
+    &:nth-child(2) :first-child{
         color: $accent-color;
     }
-    &:last-child{
+    &:last-child :first-child{
         color: $secondary-color;
     }
 }
 
+@media screen and (width > 375px){
+    .about{
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding-inline: 2em;
+    }
+    .hero{
+        grid-column: 1/-1;
+    }
+    .desc{
+        padding-inline: 3em;
+    }
+    .content{
+        grid-template-columns: 2fr 1fr;
+        &:nth-child(4) .textSection,
+        &:nth-child(5) .textSection{
+            grid-column: 1/-1;
+        }
+    }
+}
 
-.content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0;
-}
-.textSection{
-    flex: 1;
-    padding-right: 20px;
-}
-.imageSection{
-    flex: 1;
-    text-align: center;
-}
-.image{
-    max-width: 100%;
-    // height: auto;
-    border-radius: 10px;
+@media screen and (width > 820px){
+    .about{
+        gap: 1em;
+    }
+    .content{
+        grid-template-columns: 1fr;
+    }
+    .content{
+        place-items: center;
+        border: 1px solid transparent;
+        border-image: linear-gradient(-70deg, $link-color, 20%, transparent, transparent, 85%, $link-color) 1;
+        box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+    }
+    .textSection{
+        padding: 1em;
+        border: none;
+        box-shadow: none;
+    }
+    .imageSection{
+        width: 75%;
+        // text-align: center;
+    }
 }
