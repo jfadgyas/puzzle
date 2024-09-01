@@ -13,6 +13,7 @@ const getDb = async (searchParams: { [key: string]: string | string[] | undefine
 
             let newFilter: Record<string, any>[] = []
 
+            // Why forEach doesn't work???
             const zFilter = (newSearch as string[]).map(item => {
                 const minValue = item!.split('-')[0]
                 const maxValue = item!.split('-')[1]

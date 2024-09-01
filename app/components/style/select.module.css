@@ -1,0 +1,38 @@
+.customSelect {
+  position: relative;
+}
+
+.select {
+  width: -moz-min-content;
+  width: min-content;
+  padding-right: 1.5em;
+  background: rgb(43, 41, 41);
+  color: inherit;
+  border: 1px solid grey;
+  border-radius: 0.25em;
+  outline: none;
+  text-transform: capitalize;
+  text-align: center;
+  cursor: pointer;
+}
+.select:focus-visible, .select:focus-within {
+  border-color: cornflowerblue;
+}
+
+.icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 1.5em;
+  height: 1em;
+  background: rgb(43, 41, 41);
+  pointer-events: none;
+}
+
+@media screen and (width > 375px) {
+  .select {
+    padding: 0.2em;
+    padding-right: 1.5em;
+    font-size: 1em;
+  }
+}/*# sourceMappingURL=select.module.css.map */

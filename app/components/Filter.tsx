@@ -30,7 +30,7 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
     const getFilters = (which: string) => filterCategories[which].map((item: string) => 
         <label className={style.values} key={item}>
             <input
-                className=''
+                className={style.checkbox}
                 id={`${which}${item}`}
                 name={which}
                 type='checkbox'

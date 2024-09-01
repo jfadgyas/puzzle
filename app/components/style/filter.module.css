@@ -50,8 +50,13 @@
   transition: 300ms;
 }
 
+.checkbox {
+  accent-color: cornflowerblue;
+}
+
 .values {
   display: block;
+  margin-block: 0.5em;
   text-transform: capitalize;
 }
 

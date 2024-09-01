@@ -1,1 +1,1 @@
-{"version":3,"sources":["_common.scss","error.module.css","error.module.scss"],"names":[],"mappings":"AA2BA;EACI,aAAA;EACA,mBAAA;AC1BJ;;ACDA;EAEI,sBAAA;EACA,QAAA;EACA,cFYE;EEXF,kBAAA;ADGJ;;ACDA;EACI,UAAA;ADIJ","file":"error.module.css"}
+{"version":3,"sources":["_common.scss","error.module.css","error.module.scss"],"names":[],"mappings":"AA4BA;EACI,aAAA;EACA,mBAAA;AC3BJ;;ACDA;EAEI,sBAAA;EACA,QAAA;EACA,cFYE;EEXF,kBAAA;ADGJ;;ACDA;EACI,UAAA;ADIJ","file":"error.module.css"}

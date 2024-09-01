@@ -2,7 +2,12 @@ import { useRef } from "react"
 
 import {shippingCosts} from '@/app/models/shipping'
 
-// import style from './style/addtocart.module.scss'
+import Icon from '@mdi/react'
+import {
+    mdilChevronDown,
+} from '@mdi/light-js';
+
+import style from './style/select.module.scss'
 
 type Props = {
     shipping: Record<string, any>,
@@ -21,13 +26,18 @@ const Shipping = ({shipping, emitShipping}: Props) => {
     )
 
     return (
-        <div id='shipping' className='{style.qtyWrapper}'>
+        <div id='shipping' className={style.customSelect}>
             <select
+                className={style.select}
                 ref={selectRef}
                 defaultValue={shipping.index}
                 onChange={(e) => emitShipping(+e.target.value)}>
                 {countries}
-            </select>            
+            </select>
+            <Icon
+                className={style.icon}
+                path={mdilChevronDown}
+            />          
         </div>
     )
 }

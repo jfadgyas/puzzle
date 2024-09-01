@@ -1,0 +1,40 @@
+@import '../../common';
+
+.customSelect{
+    position: relative;
+}
+.select{
+    width: min-content;
+    padding-right: 1.5em;
+    background: $bg-color;
+    color: inherit;
+    border: 1px solid $grey;
+    border-radius: 0.25em;
+    outline: none;
+    
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+    &:focus-visible,
+    &:focus-within{
+        border-color: $link-color;
+    }
+}
+
+.icon{
+    position: absolute;
+    top: 2px; // Borders
+    right: 2px;
+    width: 1.5em;
+    height: 1em;
+    background: $bg-color;
+    pointer-events: none;
+}
+
+@media screen and (width > 375px){
+    .select{
+        padding: 0.2em;
+        padding-right: 1.5em;
+        font-size: 1em;
+    }
+}

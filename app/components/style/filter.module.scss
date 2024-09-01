@@ -45,8 +45,12 @@
     width: 1.5em;
     transition: 300ms;
 }
+.checkbox{
+    accent-color: $link-color;
+}
 .values{
     display: block;
+    margin-block: 0.5em;
     text-transform: capitalize;
 }
 
