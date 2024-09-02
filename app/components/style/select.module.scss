@@ -7,11 +7,10 @@
     width: min-content;
     padding-right: 1.5em;
     background: $bg-color;
-    color: inherit;
+    color: $text-color;
     border: 1px solid $grey;
     border-radius: 0.25em;
-    outline: none;
-    
+    outline: none;    
     text-transform: capitalize;
     text-align: center;
     cursor: pointer;
@@ -20,16 +19,21 @@
         border-color: $link-color;
     }
 }
-
-.icon{
-    position: absolute;
-    top: 2px; // Borders
-    right: 2px;
-    width: 1.5em;
-    height: 1em;
-    background: $bg-color;
-    pointer-events: none;
+.option{
+    text-transform: capitalize;
 }
+
+// For custom select menu icon, not used at the moment
+// .icon{
+//     position: absolute;
+//     top: 2px; // Borders
+//     right: 2px;
+//     width: 1.5em;
+//     height: 1em;
+//     background: $bg-color;
+//     pointer-events: none;
+//     border: 1px solid hotpink;
+// }
 
 @media screen and (width > 375px){
     .select{

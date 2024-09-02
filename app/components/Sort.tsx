@@ -3,11 +3,6 @@
 import { useSearchParams, useRouter } from "next/navigation"
 import { ChangeEvent } from "react"
 
-import Icon from '@mdi/react'
-import {
-    mdilChevronDown,
-} from '@mdi/light-js';
-
 import style from './style/select.module.scss'
 
 const Sort = () => {
@@ -16,7 +11,6 @@ const Sort = () => {
     const searchParams = useSearchParams()
 
     // Generate options
-
     const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
         
         const selected = e.target.options.selectedIndex
@@ -43,10 +37,6 @@ const Sort = () => {
                 <option className={style.option} data-name='model' value='-1'>model descending</option>
                 {/*newest, popular, review?*/}
             </select>
-            <Icon
-                className={style.icon}
-                path={mdilChevronDown}
-            />
         </div>
     )
 }

@@ -2,11 +2,6 @@ import { useRef } from "react"
 
 import {shippingCosts} from '@/app/models/shipping'
 
-import Icon from '@mdi/react'
-import {
-    mdilChevronDown,
-} from '@mdi/light-js';
-
 import style from './style/select.module.scss'
 
 type Props = {
@@ -33,11 +28,7 @@ const Shipping = ({shipping, emitShipping}: Props) => {
                 defaultValue={shipping.index}
                 onChange={(e) => emitShipping(+e.target.value)}>
                 {countries}
-            </select>
-            <Icon
-                className={style.icon}
-                path={mdilChevronDown}
-            />          
+            </select>         
         </div>
     )
 }

@@ -35,6 +35,7 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
                 name={which}
                 type='checkbox'
                 value={item}
+                checked={searchParams.getAll(which).includes(item)}
                 onChange={handleChange}
                 >
             </input>
@@ -155,6 +156,7 @@ const Filter = ({brands, tags}: {brands: string[], tags: string[]}) => {
                                 name='isOnSale'
                                 type='checkbox'
                                 value='true'
+                                checked={searchParams.getAll('isOnSale').includes('true')}
                                 onChange={handleChange}>
                             </input>
                             On Sale
