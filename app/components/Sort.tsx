@@ -27,14 +27,14 @@ const Sort = () => {
         <div className={style.customSelect}>
             <select className={style.select} defaultValue='' onChange={handleChange}>
                 <option className={style.option} disabled value=''>Sort options</option>
-                <option className={style.option} data-name='price' value='1'>price ascending</option>
-                <option className={style.option} data-name='price' value='-1'>price descending</option>
-                <option className={style.option} data-name='pieces' value='1'>pieces ascending</option>
-                <option className={style.option} data-name='pieces' value='-1'>pieces descending</option>
-                <option className={style.option} data-name='make' value='1'>brands ascending</option>
-                <option className={style.option} data-name='make' value='-1'>brands descending</option>
-                <option className={style.option} data-name='model' value='1'>model ascending</option>
-                <option className={style.option} data-name='model' value='-1'>model descending</option>
+                <option className={style.option} data-name='price' value='1'>Price ascending</option>
+                <option className={style.option} data-name='price' value='-1'>Price descending</option>
+                <option className={style.option} data-name='pieces' value='1'>Pieces ascending</option>
+                <option className={style.option} data-name='pieces' value='-1'>Pieces descending</option>
+                <option className={style.option} data-name='make' value='1'>Brands ascending</option>
+                <option className={style.option} data-name='make' value='-1'>Brands descending</option>
+                <option className={style.option} data-name='model' value='1'>Model ascending</option>
+                <option className={style.option} data-name='model' value='-1'>Model descending</option>
                 {/*newest, popular, review?*/}
             </select>
         </div>

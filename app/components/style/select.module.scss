@@ -18,9 +18,9 @@
     &:focus-within{
         border-color: $link-color;
     }
-}
-.option{
-    text-transform: capitalize;
+    & option{ // Doesn't work on IOS safari
+        text-transform: capitalize;
+    }
 }
 
 // For custom select menu icon, not used at the moment

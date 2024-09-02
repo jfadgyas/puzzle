@@ -7,7 +7,7 @@
   width: min-content;
   padding-right: 1.5em;
   background: rgb(43, 41, 41);
-  color: inherit;
+  color: aliceblue;
   border: 1px solid grey;
   border-radius: 0.25em;
   outline: none;
@@ -18,15 +18,8 @@
 .select:focus-visible, .select:focus-within {
   border-color: cornflowerblue;
 }
-
-.icon {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 1.5em;
-  height: 1em;
-  background: rgb(43, 41, 41);
-  pointer-events: none;
+.select option {
+  text-transform: capitalize;
 }
 
 @media screen and (width > 375px) {
