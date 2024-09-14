@@ -4,6 +4,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
 import Orders from "../models/orders";
 import Puzzles from '@/app/models/puzzles'
+import dbConnect from "../lib/dbConnect";
 
 const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) => {
 
@@ -70,6 +71,7 @@ const OrdersPage = async ({searchParams}: {searchParams: {session_id: string}}) 
     const session = await stripe.checkout.sessions.retrieve(searchParams.session_id)
     
     // Get order from db
+    dbConnect()
     const order = await Orders
         .findOne({checkout_id: searchParams.session_id})
         .populate('products.product', 'pic model pieces price', Puzzles)
