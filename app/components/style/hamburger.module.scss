@@ -9,11 +9,11 @@
     transition: 300ms;
     &--open{
         right: 8em;
-        background: hotpink;
+        background: $secondary-color;
     }
 }
 
-@media screen and (width > 375px) {
+@media screen and (width > 600px) {
     .hamburger{
         display: none;
     }

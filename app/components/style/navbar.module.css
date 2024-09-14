@@ -70,6 +70,7 @@
   padding: 3em 0 3em 0;
   background: url("/small.png");
   background-size: contain;
+  text-align: center;
 }
 
 .head {
@@ -78,7 +79,7 @@
   font-family: var(--font-seymour);
   font-weight: 400;
   font-style: normal;
-  font-size: 29px;
+  font-size: 7vw;
   text-transform: uppercase;
   position: relative;
   text-shadow: 5px 5px 1px #01abb0, -5px 5px 1px #01abb0, 5px -5px 1px #01abb0, -5px -5px 1px #01abb0, 10px 10px 1px #026369, -10px 10px 1px #026369, 10px -10px 1px #026369, -10px -10px 1px #026369;
@@ -89,20 +90,7 @@
   text-shadow: 1px 1px 1px aliceblue, 2px 2px 1px #003137, 2px -2px 1px #003137, -2px -2px 1px #003137, -2px 2px 1px #003137;
 }
 
-@media screen and (width > 375px) {
-  .head {
-    font-size: 77px;
-  }
-}
-@media screen and (width > 1000px) {
-  .headContainer {
-    text-align: center;
-  }
-  .head {
-    font-size: 100px;
-  }
-}
-@media screen and (width <= 375px) {
+@media screen and (width < 600px) {
   .navList {
     position: fixed;
     right: -100%;

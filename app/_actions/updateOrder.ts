@@ -4,7 +4,7 @@ import dbConnect from "../lib/dbConnect"
 
 const updateOrder = async (session: Record<string, any>) => {
     
-    dbConnect()
+    await dbConnect()
 
     const newOrder = {
         created: session.created,
@@ -17,7 +17,7 @@ const updateOrder = async (session: Record<string, any>) => {
         products: JSON.parse(session.metadata.cart)
     } 
 
-    const URI = 'http://localhost:3000/api/db'
+    const URI = `${process.env.BASEURL}/api/db` //'http://localhost:3000/api/db'
         const options = {
             headers: {
                 'content-type': 'application/json'

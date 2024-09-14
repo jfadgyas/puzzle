@@ -34,7 +34,7 @@ const successPage = ({searchParams}: {searchParams: {session_id: string}}) => {
                     href='/'>Continue Shopping
                 </Link>
             </div>  
-            Further Enhancements: Consider adding additional features such as estimated delivery date, order tracking links, and customer support contact information. rate review
+            {/* <p>Further Enhancements: Consider adding additional features such as estimated delivery date, order tracking links, and customer support contact information. rate review</p> */}
         </main>
     )
 }

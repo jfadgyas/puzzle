@@ -4,10 +4,6 @@ import { Metadata } from 'next';
 import Icon from '@mdi/react'
 import { mdilCancel } from '@mdi/light-js'
 
-// import Stripe from "stripe";
-
-// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
-
 import style from './cancel.module.scss'
 
 export const metadata: Metadata = {
@@ -40,9 +36,6 @@ const CancelPage = () => {
                     href='/'>Return to Home
                 </Link>
             </div>
-            <p>
-                Further Enhancements: Consider adding live chat support or a link to a detailed FAQ page for troubleshooting payment issues.
-            </p>
         </section>
     )
 }

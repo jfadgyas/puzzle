@@ -11,7 +11,7 @@
   background: hotpink;
 }
 
-@media screen and (width > 375px) {
+@media screen and (width > 600px) {
   .hamburger {
     display: none;
   }
