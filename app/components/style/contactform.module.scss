@@ -51,6 +51,7 @@ $alpha-max: 0.5;
     border: 1px solid transparent;
     outline: none;
     font-family: inherit;
+    font-size: 16px; // was smaller, but for ios zoom must have 16px
     &::selection{
         background: $accent-color;
         color: $text-color;
@@ -65,7 +66,7 @@ $alpha-max: 0.5;
 .message{
     min-height: 5em;
     resize: none;
-    font-size: smaller;
+    // font-size: smaller;
 }
 
 .button{

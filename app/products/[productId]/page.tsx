@@ -16,21 +16,39 @@ import ExtIcon from "@/app/components/ExtIcon"
 import ImageView from "@/app/components/ImageView"
 
 import Puzzles from '@/app/models/puzzles'
-// import { puzzledb } from "@/app/models/puzzle"
-// use a fetch to fetch all products and filter
 
 import style from './product.module.scss'
 
-export const metadata: Metadata = {
-    title: "Buy Now at Puzzle Plaza",
-    description: "Created by Jcube 2024",
-  };
+export async function generateMetadata({params}: {params: {productId: string}}){
+    
+    const puzzleDb = await Puzzles.find()
+
+    const puzzle: Record<string, any> | undefined = puzzleDb.find(item => item._id.toString() === params.productId)
+    if(!puzzle) return
+    
+    return {
+        title: `${puzzle.model} | Buy Now at Puzzle Plaza`,
+        description: puzzle.description,
+        openGraph: {
+            title: `${puzzle.model} | Buy Now at Puzzle Plaza`,
+            description: puzzle.description,
+            siteName: 'Puzzle Plaza',
+            type: 'website',
+            url: `${process.env.BASEURL}/products/${params.productId}`,
+            images: [{
+                url: puzzle.pic[0],
+                width: 1200,
+                height: 630
+            }]
+        }
+    }
+  }
 
 const PuzzlePage = async ({params}: {params: {productId: string}}) => {
 
+    // should only pass single puzzle
     const puzzleDb = await Puzzles.find()
 
-    //add types, will change with db call
     const puzzle: Record<string, any> | undefined = puzzleDb.find(item => item._id.toString() === params.productId)
     if(!puzzle) return
     
@@ -49,7 +67,7 @@ const PuzzlePage = async ({params}: {params: {productId: string}}) => {
                 <p>
                     <Icon path={mdilTag} size={1} />
                     {
-                        puzzle.tags.map((item: string) => <Link className={style.link} key={item} href={item}>{item}</Link>)
+                        puzzle.tags.map((item: string) => <Link className={style.link} key={item} href={`${process.env.BASEURL}?tags=${item}`}>{item}</Link>)
                     }
                 </p>
             </div>

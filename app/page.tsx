@@ -18,7 +18,7 @@ const MainPage = async ({searchParams}: {searchParams: { [key: string]: string |
     const helpers = await Helpers.findOne()
 
     return (
-        <main id='start'>
+        <main id='home'>
             <div className={style.auxrow} id='auxrow'>
                 <AriaButton ariaId={'#filter'} className={style.filterBtn}>
                     <ExtIcon className={style.filterIcon} path='filter'></ExtIcon>
