@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next"
 
 import Puzzles from "./models/puzzles"
+import dbConnect from "./lib/dbConnect"
 
 const baseUrl = 'https://puzzleplaza.netlify.app'
 
 export default async function sitemap(){
 
+    await dbConnect()
     const puzzledb = await Puzzles.find()
 
     const puzzleUrl = puzzledb.map(puzzle => {
