@@ -1,5 +1,6 @@
 import dbConnect from "./lib/dbConnect"
 import Filter from "./components/Filter"
+import Search from "./components/Search"
 import Sort from "./components/Sort"
 import Products from '@/app/components/Products'
 
@@ -22,8 +23,9 @@ const MainPage = async ({searchParams}: {searchParams: { [key: string]: string |
             <div className={style.auxrow} id='auxrow'>
                 <AriaButton ariaId={'#filter'} className={style.filterBtn}>
                     <ExtIcon className={style.filterIcon} path='filter'></ExtIcon>
+                    {/* <span>Filters</span> */}
                 </AriaButton>
-            <span>search</span>
+                <Search />
                 <Sort />
             </div>
             <Filter brands={helpers.brands} tags={helpers.tags} />

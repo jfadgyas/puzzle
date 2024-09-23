@@ -26,15 +26,15 @@ const Sort = () => {
     return (
         <div className={style.customSelect}>
             <select className={style.select} defaultValue='' onChange={handleChange}>
-                <option className={style.option} disabled value=''>Sort options</option>
-                <option className={style.option} data-name='price' value='1'>Price ascending</option>
-                <option className={style.option} data-name='price' value='-1'>Price descending</option>
-                <option className={style.option} data-name='pieces' value='1'>Pieces ascending</option>
-                <option className={style.option} data-name='pieces' value='-1'>Pieces descending</option>
-                <option className={style.option} data-name='make' value='1'>Brands ascending</option>
-                <option className={style.option} data-name='make' value='-1'>Brands descending</option>
-                <option className={style.option} data-name='model' value='1'>Model ascending</option>
-                <option className={style.option} data-name='model' value='-1'>Model descending</option>
+                <option className={style.option} disabled value=''>Sort</option>
+                <option className={style.option} data-name='price' value='1'>Price up</option>
+                <option className={style.option} data-name='price' value='-1'>Price down</option>
+                <option className={style.option} data-name='pieces' value='1'>Pieces up</option>
+                <option className={style.option} data-name='pieces' value='-1'>Pieces down</option>
+                <option className={style.option} data-name='make' value='1'>Brands up</option>
+                <option className={style.option} data-name='make' value='-1'>Brands down</option>
+                <option className={style.option} data-name='model' value='1'>Model up</option>
+                <option className={style.option} data-name='model' value='-1'>Model down</option>
                 {/*newest, popular, review?*/}
             </select>
         </div>

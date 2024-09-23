@@ -1,0 +1,32 @@
+.label {
+  transition: 300ms;
+}
+.label:focus-within .input {
+  color: cornflowerblue;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.input {
+  max-width: 10em;
+  padding: 0.25em;
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  transition: 300ms;
+}
+.input::-moz-selection {
+  background: coral;
+  color: aliceblue;
+}
+.input::selection {
+  background: coral;
+  color: aliceblue;
+}
+
+.icon {
+  width: 1.5rem;
+}/*# sourceMappingURL=search.module.css.map */

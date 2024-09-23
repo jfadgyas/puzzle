@@ -1,0 +1,35 @@
+@import '../../common';
+
+$alpha-min: 0.2;
+$alpha-max: 0.5;
+
+.label{
+    transition: 300ms;
+    &:focus-within{
+        & .input{
+            color: $link-color;
+            background: rgba(0, 0, 0, $alpha-max);
+        }
+    }
+}
+
+.input{
+    max-width: 10em; // ? click a nagyitora es kiszelesedik
+    padding: 0.25em;
+    background: rgba(0, 0, 0, $alpha-min);
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px; // was smaller, but for ios zoom must have 16px
+    transition: 300ms;
+    &::selection{
+        background: $accent-color;
+        color: $text-color;
+    }
+}
+
+.icon{
+    width: 1.5rem;
+}

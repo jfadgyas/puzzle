@@ -6,7 +6,7 @@ const getDb = async (searchParams: { [key: string]: string | string[] | undefine
     // Filter
     let filter: Record<string, any> = {}
     Object.keys(searchParams).map((key: string) => {
-        if (key === 'sort') return 
+        if (key === 'sort' || key === 'search') return 
         if (key === 'price' || key === 'forAge' || key === 'pieces'){
             const newSearch = Array.isArray(searchParams[key]) ? searchParams[key] : Array.of(searchParams[key])
             if (newSearch === undefined) return null
@@ -24,6 +24,18 @@ const getDb = async (searchParams: { [key: string]: string | string[] | undefine
         }
         filter[key] = {$in: searchParams[key]}
     })
+
+    if (searchParams.search){
+        const searchString = new RegExp(searchParams.search as string, 'i')
+        filter = {
+            $or: [
+                {make: {$regex: searchString}},
+                {model:{$regex: searchString}},
+                {description:{$regex: searchString}},
+            ],
+            ...filter
+        }
+    }
 
     // Sort
     const sort = searchParams.sort as string || '{}'
